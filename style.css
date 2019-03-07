@@ -1,0 +1,71 @@
+img.bestill-bilder{
+width: 120px;
+}
+bestillings-diver{
+    float:left;
+    margin-right: 120px;
+    margin-top: 40px;
+}
+.header-li{  float:right;
+    margin-left: 6px;
+    list-style: none;
+    color: white;
+    font-size: 30px}
+video{
+    width: auto;
+    height: 350px;
+    margin-top: 130px;
+    border: 2px solid white;
+    margin-left: 366px;
+    background-color: black;
+}
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("laks.jpg");
+background-size: cover;
+height: 100vh;
+}
+#first-H2::after{
+content: "";
+width: 130px;
+height: 2px;
+background-color: orange;
+display: block;
+margin-left: 637px;
+margin: 0 auto;
+}
+#first-H2{
+    text-align: center;
+}
+
+
+
+#contact{margin-top: 16px;
+}
+label{margin-left: 5px;}
+.contact-lis{color: black;
+float:left;
+margin-left: 100px;
+font-size: 20px;
+
+}
+input{
+    margin-left: 20px;
+}
+*{margin: 0px;}
+p{
+    color: black;
+}
+.Bestillings-li{
+    float:left;
+    margin-top: 40px;
+    margin-left: 40px;
+    list-style: none;
+}
+.Bestillings-ul{
+margin-left: 300px;
+display: inline-block;
+}
+#krabbesuppe{
+width: 120px;
+height: 14%;
+}
