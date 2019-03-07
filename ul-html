@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+ul{float: right;list-style: none;font-size: 32px;
+background: black;color: white;height: 400px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.li-notImage{
+margin-top: 6px;
+background: red;
+margin-right: 30px;
+width: 500px;
+margin-bottom: 6px;
+}
+.li-image{margin-top: 6px;
+
+margin-right: 30px;
+width: 60px;
+margin-bottom: 16px;
+}#ul-image{
+    width: 130px;
+    margin-left: 160px;
+}
+li#shopping-cart-payNow {
+    background-color: green;
+    text-align: center;
+    width: 150px;
+    font-size: 20px;
+    margin-left: 160px;
+}
+</style>
+</head>
+<body>
+<ul>
+<li class="li-image"><img src="favic-o-matic.png"id="ul-image"></li>
+<li class="li-notImage">object 1</li>
+<li class="li-notImage">object 2</li>
+<li class="li-notImage">object 3</li>
+<li class="li-notImage">object 4</li>
+<li class="li-notImage">object 5</li>
+<li id="shopping-cart-payNow"><a href="#"><div>pay Now</div></a></li>
+</ul>
+</body>
+</html>
