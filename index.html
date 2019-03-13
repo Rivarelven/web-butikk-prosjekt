@@ -3,59 +3,142 @@
     <title>fra fjord til fjord</title>
     <link rel=stylesheet type="text/css"href=style.css>
    <script src="jquery-1.10.2.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-    </head>
+    <script src="objecter i javascript.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
+  </script>
+<link rel="stylesheet"type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">   
+<link rel="Icon"type="image/png"href="logo/favicon.png">
+</head>
     <body>
     <header>
         <nav>
-       
         <ul>
+        <img src="logo/logo_transparent.png"id="logo">
+        <div id="navigation-div">
+           <li class="header-li"><i class="ion-ios-cart big-icon" onclick="showShopingCart()"></i></li>
             <li class="header-li">contact us</li>
-       
         <li class="header-li">order now</li>
-       
         <li class="header-li">Home</li> 
+        </div>
             </ul>
         </nav>
-        <video src="eksamen video_Medium.mp4"poster="krabbe.jpg"controls></video>
+          <script>
+       var sum=2
+      paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+           //value: '0.01'
+              value:sum
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Transaction completed by ' + details.payer.name.given_name);
+        // Call your server to save the transaction
+        return fetch('/paypal-transaction-complete', {
+          method: 'post',
+          body: JSON.stringify({
+            orderID: data.orderID
+          })
+        });
+      });
+    }
+  }).render('#paypal-button-container');
+     </script>
+        <div id="shopCart-container"><h2 id="shopping-Cart-header">Shoping Cart</h2>
+         <div id="paypal-button-container"></div> 
+    </div>
     </header>
 <section>
-<h2 id="first-H2">Bestill hos Oss</h2>
+<h2 id="first-H2">Order Now</h2>
      <ul class="bestillings-ul">
-
 <li class="Bestillings-li">
 <div class="bestillings-diver">
-<img src="torsk.jpg"class="bestill-bilder">
+<img src="torsk.jpg"class="bestill-bilder" id="torsk">
 <h3>Torsk</h3>
 <p>pris:270 kr</p>
+<div class="store-item-icon">
 
+</div>
 <br>
 </div>
 </li>
-
 <li class="Bestillings-li">
     <div class="bestillings-diver">
-    <img src="laks.jpg"class="bestill-bilder">
+    <img src="laks.jpg"class="bestill-bilder"id="laks">
     <h3>Laks</h3>
     <p>pris:323 kr</p>
+    <div class="store-item-icon">
+    
+    </div>
     <br>
     </div>
     </li>
-
-    
 <li class="Bestillings-li">
         <div class="bestillings-diver">
         <img src="krabbesuppe.jpg"id="krabbesuppe">
         <h3>krabbesuppe</h3>
         <p>pris:290 kr</p>
+        <div class="store-item-icon">
+         
+        </div>
         <br>
         </div>
         </li>
-
-        
-     </ul>
+    </ul>
+           <ul class="bestillings-ul">
+<li class="Bestillings-li">
+<div class="bestillings-diver">
+<img src="cazuela.jpg"class="bestill-bilder" id="Cazuela">
+<h3>Cazuela</h3>
+<p>pris:320 kr</p>
+<div class="store-item-icon">
+ 
+</div>
+<br>
+</div>
+</li>
+<li class="Bestillings-li">
+    <div class="bestillings-diver">
+    <img src="laks.jpg"class="bestill-bilder"id="laks">
+    <h3>Laks</h3>
+    <p>pris:323 kr</p>
+    <div class="store-item-icon">
      
+    </div>
+    <br>
+    </div>
+    </li>
+<li class="Bestillings-li">
+        <div class="bestillings-diver">
+        <img src="masgouf.jpg"id="krabbesuppe">
+        <h3>Masgouf</h3>
+        <p>pris:290 kr</p>
+        <div class="store-item-icon">
+       
+        </div>
+        <br>
+        </div>
+        </li>
+    </ul>
+     <script>
+    
+      function showShopingCart() {
+        var x = document.getElementById("shopCart-container");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
         </section>
     </body>
 </html>
