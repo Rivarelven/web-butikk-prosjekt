@@ -52,7 +52,7 @@
     }
   }).render('#paypal-button-container');
      </script>
-        <div id="shopCart-container"><h2 id="shopping-Cart-header">Shoping Cart</h2>
+        <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">Shoping Cart</h2>
          <div id="paypal-button-container"></div> 
     </div>
     </header>
@@ -61,34 +61,28 @@
      <ul class="bestillings-ul">
 <li class="Bestillings-li">
 <div class="bestillings-diver">
-<img src="torsk.jpg"class="bestill-bilder" id="torsk">
-<h3>Torsk</h3>
-<p>pris:270 kr</p>
-<div class="store-item-icon">
-
-</div>
+<img src="torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
+<h3 class="alle_navn">Torsk</h3>
+<p class="alle_priser">pris:270 kr</p>
+<button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
 <br>
 </div>
 </li>
 <li class="Bestillings-li">
     <div class="bestillings-diver">
-    <img src="laks.jpg"class="bestill-bilder"id="laks">
-    <h3>Laks</h3>
-    <p>pris:323 kr</p>
-    <div class="store-item-icon">
-    
-    </div>
+    <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
+    <h3 class="alle_navn">Laks</h3>
+    <p class="alle_priser">pris:323 kr</p>
+    <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
     <br>
     </div>
     </li>
 <li class="Bestillings-li">
         <div class="bestillings-diver">
-        <img src="krabbesuppe.jpg"id="krabbesuppe">
-        <h3>krabbesuppe</h3>
-        <p>pris:290 kr</p>
-        <div class="store-item-icon">
-         
-        </div>
+        <img src="krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
+        <h3 class="alle_navn">krabbesuppe</h3>
+        <p class="alle_priser">pris:290 kr</p>
+        <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
         <br>
         </div>
         </li>
@@ -96,40 +90,34 @@
            <ul class="bestillings-ul">
 <li class="Bestillings-li">
 <div class="bestillings-diver">
-<img src="cazuela.jpg"class="bestill-bilder" id="Cazuela">
-<h3>Cazuela</h3>
-<p>pris:320 kr</p>
-<div class="store-item-icon">
- 
-</div>
+<img src="cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
+<h3 class="alle_navn">Cazuela</h3>
+<p class="alle_priser">pris:320 kr</p>
+<button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
 <br>
 </div>
 </li>
 <li class="Bestillings-li">
     <div class="bestillings-diver">
-    <img src="laks.jpg"class="bestill-bilder"id="laks">
-    <h3>Laks</h3>
-    <p>pris:323 kr</p>
-    <div class="store-item-icon">
-     
-    </div>
+    <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
+    <h3 class="alle_navn">Laks</h3>
+    <p class="alle_priser">pris:323 kr</p>
+    <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
     <br>
     </div>
     </li>
 <li class="Bestillings-li">
         <div class="bestillings-diver">
-        <img src="masgouf.jpg"id="krabbesuppe">
-        <h3>Masgouf</h3>
-        <p>pris:290 kr</p>
-        <div class="store-item-icon">
-       
-        </div>
+        <img src="masgouf.jpg"id="krabbesuppe"class="alle_bilder">
+        <h3 class="alle_navn">Masgouf</h3>
+        <p class="alle_priser">pris:290 kr</p>
+        <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
         <br>
         </div>
         </li>
     </ul>
      <script>
-    
+    //egen kode
       function showShopingCart() {
         var x = document.getElementById("shopCart-container");
         if (x.style.display === "none") {
@@ -139,6 +127,40 @@
         }
       }
     </script>
+    <script>
+    //egen kode
+    const cart=document.querySelector('.cart')
+    const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
+AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
+const product_allContent=AddToCartbtn.parentNode;
+const product={
+image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
+name:product_allContent.querySelector('.alle_navn').innerText,
+price:product_allContent.querySelector('.alle_priser').innerText
+}
+cart.insertAdjacentHTML('beforeend',`<div class="cart_item">
+   <img class="bestill-bilder"src="${product.image}"alt="${product.name}"> 
+   <h3 class="alle_navn">${product.name}</h3>
+   <p class="alle_navn">${product.price}</p>
+    </div>`
+    )
+})
+});
+
+    </script>
+    <style>
+    .cart-item{
+        display: grid;
+        grid-template-columns: 2rem 7rem 3rem auto 1rem auto auto;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        padding: var(--base-padding);
+        border:2px dashed var(--color-gray-light);
+        animation: .3s add-cart-item;
+    }
+    
+    </style>
         </section>
     </body>
 </html>
