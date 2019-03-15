@@ -96,3 +96,45 @@ height: 79.95;
 #masgouf{
     width: 120px;
 }
+.section-3-titel{
+margin-top: 35px;
+    margin-left: 450px;
+    color: white;
+}
+.section-3-person-photo{
+border-radius: 50%;
+height: 45px;
+margin-right: 10px;
+vertical-align: middle;
+}
+cite{font-size: 90%;
+margin-top: 25px;
+display: block;}
+.section-testimonials{
+background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("torsk.jpg");
+background-attachment: fixed;
+    background-size: cover;
+    height: 50vh;
+}
+
+blockquote{color: white;
+padding: 2%;
+font-style: italic;
+line-height: 145%;
+position: relative;
+margin-top: 40px;}
+.all-reviwes{
+margin-top: 2px;
+}
+#section-3-header{
+    margin-top: 36px;
+}
+.amount{width: 30px;
+margin-left: 150px;
+margin-top: -80px;}
+
+#remove{
+color: white;
+    background: red;
+    float: right
+}
