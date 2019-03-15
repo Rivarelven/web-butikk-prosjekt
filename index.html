@@ -1,16 +1,20 @@
 <html>
     <head>
     <title>fra fjord til fjord</title>
+    <!-- style.css er min css fil-->
     <link rel=stylesheet type="text/css"href=style.css>
-   <script src="jquery-1.10.2.min.js"></script>
-    <script src="objecter i javascript.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <script
+  <!-- ikke min fil-->
+        <script
     src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
   </script>
 <link rel="stylesheet"type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">   
 <link rel="Icon"type="image/png"href="logo/favicon.png">
+  <!-- normalize.css er fil fra nett-->
+<link rel="stylesheet"type="text/css"href="normalize.css">
+  <!-- grid.css er fil fra nett-->
+<link rel="stylesheet"type="text/css"href="grid.css">
 </head>
     <body>
     <header>
@@ -25,7 +29,11 @@
         </div>
             </ul>
         </nav>
+        
           <script>
+        // ikke min kode
+        // ikke min kode
+        // ikke min kode
        var sum=2
       paypal.Buttons({
     createOrder: function(data, actions) {
@@ -129,6 +137,7 @@
     </script>
     <script>
     //egen kode
+    var inCart=[]
     const cart=document.querySelector('.cart')
     const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
 AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
@@ -136,14 +145,26 @@ const product_allContent=AddToCartbtn.parentNode;
 const product={
 image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
 name:product_allContent.querySelector('.alle_navn').innerText,
-price:product_allContent.querySelector('.alle_priser').innerText
+price:product_allContent.querySelector('.alle_priser').innerText,
+
 }
-cart.insertAdjacentHTML('beforeend',`<div class="cart_item">
+ var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
+if(productsincart===false){
+     var shoping_cart_header=document.getElementById("shopping-Cart-header");
+shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
    <img class="bestill-bilder"src="${product.image}"alt="${product.name}"> 
    <h3 class="alle_navn">${product.name}</h3>
    <p class="alle_navn">${product.price}</p>
+<input type="Number"class="amount">
+<button id="remove"class="amount">X</button>
     </div>`
-    )
+    );
+    
+    inCart.push(product);
+    AddToCartbtn.innerText="in Cart"
+ };
+
+    
 })
 });
 
@@ -161,6 +182,23 @@ cart.insertAdjacentHTML('beforeend',`<div class="cart_item">
     }
     
     </style>
+        </section>
+        <section class="section-testimonials">
+            <div class="row section-3-titel"><h2 id="section-3-header">Reviews from our Costumers</h2></div>
+            <div class="row all-reviwes">
+            <div class="col span-1-of-3">
+                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="person1.jpg"class="section-3-person-photo">Lust G</cite>
+</blockquote>
+                </div>
+                <div class="col span-1-of-3">
+                <blockquote>We've used A&H for the last five years. We can't understand how we've been living without A&H. I will refer everyone I know.<br><cite><img src="person2.jpg"class="section-3-person-photo">Doyle G</cite>
+</blockquote>
+                </div>
+                <div class="col span-1-of-3">
+                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="person3.jpg"class="section-3-person-photo">Lust G</cite>
+</blockquote>
+                </div>
+            </div>
         </section>
     </body>
 </html>
