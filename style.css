@@ -85,13 +85,14 @@ margin-left: 80px;}
 #shopCart-container{
 border: 3px solid orange;
     width: 300px;
-    height:300px;
+    max-height:300px;
     background: wheat;
     margin-left: 400px;
-    margin-top: 90px;}
+    margin-top: 90px;
+overflow: auto}
 #cazuela{
 width: 120px;
-height: 79.95;
+height:14%;
 }
 #masgouf{
     width: 120px;
@@ -115,6 +116,8 @@ background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("to
 background-attachment: fixed;
     background-size: cover;
     height: 50vh;
+    padding: 0;
+    
 }
 
 blockquote{color: white;
@@ -138,3 +141,71 @@ color: white;
     background: red;
     float: right
 }
+#section-4-header{
+
+    font-size: 25px;
+    text-align: center;
+}
+#section-4-header::after{
+content: "";
+width: 130px;
+height: 2px;
+background-color: orange;
+display: block;
+margin-left:0px;
+    margin-top: 6px;
+margin: 0 auto;
+}
+.section-4-h3element{
+margin-top: 6px;
+margin-left: 60px;
+}
+.section-4-Pelement{
+margin-top: 6px:
+}
+#long-text{line-height: 145%;width: 35%;margin-left: 33%;margin-top: 8px;
+
+}
+#fotter-header{
+margin-left: 520px;    
+color: white;
+
+}
+footer{
+    
+    background-color:black
+}
+#footer-paragraph{
+    color: white;
+    opacity: 2;
+}
+#newsletter-email{
+margin-top: -1px;
+font-size: 10px;
+margin-left: -310px;
+}
+newsletter-label{
+    color: white;
+}
+.section-4-cols{
+    margin-top: 18px;
+}
+
+#logo_fotter{
+    width: 80px;
+    margin-left: -310px;
+    margin-top: -15px;
+}
+
+.delte{margin-left: 150px;
+margin-top: -80px;
+}
+.section-form{
+    background-color: #f4f4f4;
+    height: 50vh;
+   
+}
+form{
+    margin-left: 480px;
+}
+#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
