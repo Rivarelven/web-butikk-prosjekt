@@ -2,6 +2,7 @@
     <head>
     <title>fra fjord til fjord</title>
     <!-- style.css er min css fil-->
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
     <link rel=stylesheet type="text/css"href=style.css>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,9 +19,9 @@
 </head>
     <body>
     <header>
-        <nav>
+        <nav class="sticky">
         <ul>
-        <img src="logo_transparent.png"id="logo">
+        <img src="logo/logo_transparent.png"id="logo">
         <div id="navigation-div">
            <li class="header-li"><i class="ion-ios-cart big-icon" onclick="showShopingCart()"></i></li>
             <li class="header-li">contact us</li>
@@ -30,15 +31,128 @@
             </ul>
         </nav>
         
-          <script>
+        
+        <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">Shoping Cart</h2>
+         <div id="paypal-button-container"></div> 
+    </div>
+    </header>
+<section>
+<h2 id="first-H2">Order Now</h2>
+     <ul class="bestillings-ul">
+<li class="Bestillings-li">
+<div class="bestillings-diver">
+<img src="torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
+<h3 class="alle_navn">Torsk</h3>
+<p class="alle_priser">price:270 &#36;</p>
+<button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+<br>
+</div>
+</li>
+<li class="Bestillings-li">
+    <div class="bestillings-diver">
+    <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
+    <h3 class="alle_navn">Laks</h3>
+    <p class="alle_priser">price:323 &#36;</p>
+    <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+    <br>
+    </div>
+    </li>
+<li class="Bestillings-li">
+        <div class="bestillings-diver">
+        <img src="krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
+        <h3 class="alle_navn">krabbesuppe</h3>
+        <p class="alle_priser">price:290 &#36;</p>
+        <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+        <br>
+        </div>
+        </li>
+    </ul>
+           <ul class="bestillings-ul">
+<li class="Bestillings-li">
+<div class="bestillings-diver">
+<img src="cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
+<h3 class="alle_navn">Cazuela</h3>
+<p class="alle_priser">price:320 &#36;</p>
+<button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+<br>
+</div>
+</li>
+<li class="Bestillings-li">
+    <div class="bestillings-diver">
+    <img src="kunefe.PNG"class="bestill-bilder alle_bilder"id="laks">
+    <h3 class="alle_navn">Kunafe</h3>
+    <p class="alle_priser">price:323 &#36;</p>
+    <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+    <br>
+    </div>
+    </li>
+<li class="Bestillings-li">
+        <div class="bestillings-diver">
+        <img src="masgouf.jpg"id="krabbesuppe"class="alle_bilder">
+        <h3 class="alle_navn">Masgouf</h3>
+        <p class="alle_priser">price:290 &#36;</p>
+        <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+        <br>
+        </div>
+        </li>
+    </ul>
+     <script>
+    //egen kode
+      function showShopingCart() {
+        var x = document.getElementById("shopCart-container");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+   
+    </script>
+    <script>
+    //egen kode
+    var inCart=[]
+    const cart=document.querySelector('.cart')
+    const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
+AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
+const product_allContent=AddToCartbtn.parentNode;
+const product={
+image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
+name:product_allContent.querySelector('.alle_navn').innerText,
+price:product_allContent.querySelector('.alle_priser').innerText,
+quantity:6
+
+}
+ var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
+if(productsincart===false){
+     var shoping_cart_header=document.getElementById("shopping-Cart-header");
+shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
+   <img class="bestill-bilder"src="${product.image}"alt="${product.name}"> 
+   <h3 class="alle_navn">${product.name}</h3>
+   <p class="alle_navn">${product.price}</p>
+<input type="Number"class="amount"id="amount_input"></input>
+<button id="remove"class="delte" data-action="REMOVE_ITEM">X</button>
+    </div>`
+    );
+    
+    inCart.push(product);
+    AddToCartbtn.innerText="in Cart";
+   
+ };
+
+    
+})
+});
+
+    </script>
+      <script>
         // ikke min kode
-        // ikke min kode
-        // ikke min kode
-       var sum=2
+        
+       var sum=2;
       paypal.Buttons({
     createOrder: function(data, actions) {
       return actions.order.create({
         purchase_units: [{
+        name:"The Total",
           amount: {
            //value: '0.01'
               value:sum
@@ -60,115 +174,6 @@
     }
   }).render('#paypal-button-container');
      </script>
-        <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">Shoping Cart</h2>
-         <div id="paypal-button-container"></div> 
-    </div>
-    </header>
-<section>
-<h2 id="first-H2">Order Now</h2>
-     <ul class="bestillings-ul">
-<li class="Bestillings-li">
-<div class="bestillings-diver">
-<img src="torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
-<h3 class="alle_navn">Torsk</h3>
-<p class="alle_priser">pris:270 kr</p>
-<button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
-<br>
-</div>
-</li>
-<li class="Bestillings-li">
-    <div class="bestillings-diver">
-    <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
-    <h3 class="alle_navn">Laks</h3>
-    <p class="alle_priser">pris:323 kr</p>
-    <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
-    <br>
-    </div>
-    </li>
-<li class="Bestillings-li">
-        <div class="bestillings-diver">
-        <img src="krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
-        <h3 class="alle_navn">krabbesuppe</h3>
-        <p class="alle_priser">pris:290 kr</p>
-        <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
-        <br>
-        </div>
-        </li>
-    </ul>
-           <ul class="bestillings-ul">
-<li class="Bestillings-li">
-<div class="bestillings-diver">
-<img src="cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
-<h3 class="alle_navn">Cazuela</h3>
-<p class="alle_priser">pris:320 kr</p>
-<button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
-<br>
-</div>
-</li>
-<li class="Bestillings-li">
-    <div class="bestillings-diver">
-    <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
-    <h3 class="alle_navn">Laks</h3>
-    <p class="alle_priser">pris:323 kr</p>
-    <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
-    <br>
-    </div>
-    </li>
-<li class="Bestillings-li">
-        <div class="bestillings-diver">
-        <img src="masgouf.jpg"id="krabbesuppe"class="alle_bilder">
-        <h3 class="alle_navn">Masgouf</h3>
-        <p class="alle_priser">pris:290 kr</p>
-        <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
-        <br>
-        </div>
-        </li>
-    </ul>
-     <script>
-    //egen kode
-      function showShopingCart() {
-        var x = document.getElementById("shopCart-container");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-      }
-    </script>
-    <script>
-    //egen kode
-    var inCart=[]
-    const cart=document.querySelector('.cart')
-    const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
-AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
-const product_allContent=AddToCartbtn.parentNode;
-const product={
-image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
-name:product_allContent.querySelector('.alle_navn').innerText,
-price:product_allContent.querySelector('.alle_priser').innerText,
-
-}
- var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
-if(productsincart===false){
-     var shoping_cart_header=document.getElementById("shopping-Cart-header");
-shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
-   <img class="bestill-bilder"src="${product.image}"alt="${product.name}"> 
-   <h3 class="alle_navn">${product.name}</h3>
-   <p class="alle_navn">${product.price}</p>
-<input type="Number"class="amount">
-<button id="remove"class="amount">X</button>
-    </div>`
-    );
-    
-    inCart.push(product);
-    AddToCartbtn.innerText="in Cart"
- };
-
-    
-})
-});
-
-    </script>
     <style>
     .cart-item{
         display: grid;
@@ -191,7 +196,7 @@ shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
-                <blockquote>We've used A&H for the last five years. We can't understand how we've been living without A&H. I will refer everyone I know.<br><cite><img src="person2.jpg"class="section-3-person-photo">Doyle G</cite>
+                <blockquote>I have used A&H for the last five years. I can't understand how i have been living without A&H. I will refer everyone I know.<br><cite><img src="person2.jpg"class="section-3-person-photo">Doyle G</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
@@ -200,6 +205,90 @@ shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
                 </div>
             </div>
         </section>
-    </body>
-</html>
+        <section><div class="row"><h2 id="section-4-header">About-Us</h2>
+            <p id="long-text">Hello  were A&H, your new premium food delivery service. We know you are always busy. No time for cooking.<br> So let us take care of that. we are really good at it we promise!</p>
+            </div>
+        <div class="row">
+        <div class="col span-1-of-3 section-4-cols">
+        <i class="ion-ios-time-outline big-icon"></i>
+        <h3 class="section-4-h3element">24 Hours a day</h3>
+            <p class="section-4-Pelement">
+        we work all the time so we can serve you! order now and the food will be at your house in about 5 minutes    
+            </p>    
+            
+            </div> 
+           
+            
+             <div class="col span-1-of-3 section-4-cols">
+        <i class="ion-earth big-icon"></i>
+        <h3 class="section-4-h3element">From the river to the sea</h3>
+            <p class="section-4-Pelement">
+       we look for food every where and we search for food from the river to the sea just to make food for you!
+            </p>    
+            </div>    
+            
+             <div class="col span-1-of-3 section-4-cols">
+        <i class="ion-android-happy big-icon"></i>
+        <h3 class="section-4-h3element">100% Happy</h3>
+            <p class="section-4-Pelement">
+        if you want to enjoy your time with your family or you friends, we are alway ready to help you so you can enjoy your dinner
+            </p>    
+            </div>    
+            
+            
+            </div>
+        
+        </section>
+    
+        
+<section class="section-form">
+<form action="https://gmail.us20.list-manage.com/subscribe/post?u=af0fa8cc31b7e47edefe372bc&amp;id=f7d13e65bc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>        
+ <div id="mc_embed_signup_scroll" class="row">
+	<h2>Subscribe to our mailing list</h2>
 
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk"></span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+     <div class="mc-field-group">
+	<label for="mce-FNAME">First Name </label>
+	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+    <div class="mc-field-group">
+	<label for="mce-LNAME">Last Name </label>
+	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+</div>
+     <div class="mc-field-group size1of2">
+	<label for="mce-BIRTHDAY-month">Birthday </label>
+	<div class="datefield">
+		<span class="subfield monthfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> / 
+		<span class="subfield dayfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span> 
+		<span class="small-meta nowrap">( mm / dd )</span>
+	</div>
+</div>
+     <div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_af0fa8cc31b7e47edefe372bc_f7d13e65bc" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
+        
+        </section>
+     <footer>
+    <div class="row">
+        <h4 id="fotter-header">A&H all Rights Served</h4>
+        <p id="footer-paragraph">
+       All rights served 
+        </p>
+         </div>
+        <div class="row newsletter">
+        <div class="col span-1-of-3"><img src="logo/logo_transparent.png" id="logo_fotter"></div>
+         </div>
+       </footer>
+    </body> 
+</html>
