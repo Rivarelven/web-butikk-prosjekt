@@ -1,3 +1,4 @@
+
 <html>
     <head>
     <title>fra fjord til fjord</title>
@@ -10,7 +11,7 @@
         <script
     src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
   </script>
-<link rel="stylesheet"type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">   
+<link rel="stylesheet"type="text/css"href="ionicons/ionicons-2.0.1/css/ionicons.css">   
 <link rel="Icon"type="image/png"href="logo/favicon.png">
   <!-- normalize.css er fil fra nett-->
 <link rel="stylesheet"type="text/css"href="normalize.css">
@@ -19,8 +20,8 @@
 </head>
     <body>
     <header>
-        <nav class="sticky">
-        <ul>
+    <nav>
+        <ul class="main-nav">
         <img src="logo/logo_transparent.png"id="logo">
         <div id="navigation-div">
            <li class="header-li"><i class="ion-ios-cart big-icon" onclick="showShopingCart()"></i></li>
@@ -129,7 +130,7 @@ shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
    <img class="bestill-bilder"src="${product.image}"alt="${product.name}"> 
    <h3 class="alle_navn">${product.name}</h3>
    <p class="alle_navn">${product.price}</p>
-<input type="Number"class="amount"id="amount_input"></input>
+<input type="Number"class="amount"id="amount_input"min="1"></input>
 <button id="remove"class="delte" data-action="REMOVE_ITEM">X</button>
     </div>`
     );
