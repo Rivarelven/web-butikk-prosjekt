@@ -5,7 +5,7 @@ bestillings-diver{
     margin-right: 120px;
     margin-top: 40px;}
 .header-li{float:right;
-    margin-left: 16px;
+    
     list-style: none;
     color:#FF9800;
     font-size: 129%;
@@ -72,14 +72,16 @@ color:coral;}
 margin-top: 190px;
     margin-left: 60px;}
 #logo{
-width: 90px;transition:transform 2s;}
+width: 90px;transition:transform 2s;
+}
 #logo:hover{
 transform: rotate(360deg)}
 nav{
 background: whitesmoke;}
 #navigation-div{
 margin-top:-90px;
-margin-right: 500px;}
+margin-right: 450px
+}
 #shopping-Cart-header{
 margin-left: 80px;}
 #shopCart-container{
@@ -209,3 +211,5 @@ form{
     margin-left: 480px;
 }
 #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+
+}
