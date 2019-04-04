@@ -1,4 +1,3 @@
-
 <html>
     <head>
     <title>fra fjord til fjord</title>
@@ -11,38 +10,49 @@
         <script
     src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
   </script>
-<link rel="stylesheet"type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">   
-<link rel="Icon"type="image/png"href="logo/favicon.png">
+<link rel="stylesheet"type="text/css"href="all_pictures/icons_and_logos/ionicons/ionicons-2.0.1/css/ionicons.css">   
+<link rel="Icon"type="image/png"href="all_pictures/icons_and_logos/favicon.png">
   <!-- normalize.css er fil fra nett-->
 <link rel="stylesheet"type="text/css"href="normalize.css">
   <!-- grid.css er fil fra nett-->
 <link rel="stylesheet"type="text/css"href="grid.css">
+<script src="typed.js"></script>
+<link rel="stylesheet"type="text/css"href="animate.css">
+<script src="jquery.waypoints.js"></script>
+<script src="jquerry_3.js"></script>
+
+
 </head>
     <body>
+    
     <header>
     <nav>
         <ul class="main-nav">
-        <img src="logo_transparent.png"id="logo">
+        <img src="all_pictures/icons_and_logos/logo_transparent.png"id="logo">
         <div id="navigation-div">
            <li class="header-li"><i class="ion-ios-cart big-icon" onclick="showShopingCart()"></i></li>
-            <li class="header-li">contact us</li>
-        <li class="header-li">order now</li>
-        <li class="header-li">Home</li> 
+            <li class="header-li" id="contact-us"onclick="contactUS()">contact us</li>
+        <li class="header-li" id="order-now" onclick="orderNow()">order now</li>
+        <li class="header-li" id="Home">Home</li> 
         </div>
             </ul>
         </nav>
         
         
         <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">Shoping Cart</h2>
+		<div id="list-of-items"></div>
+			<button id="remove"onclick="deletea()">Empty Cart</button>
          <div id="paypal-button-container"></div> 
     </div>
     </header>
+		
 <section>
 <h2 id="first-H2">Order Now</h2>
+	
      <ul class="bestillings-ul">
 <li class="Bestillings-li">
 <div class="bestillings-diver">
-<img src="torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
+<img src="all_pictures/backgrounds_and_pictures/torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
 <h3 class="alle_navn">Torsk</h3>
 <p class="alle_priser">price:270 &#36;</p>
 <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
@@ -51,7 +61,7 @@
 </li>
 <li class="Bestillings-li">
     <div class="bestillings-diver">
-    <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
+    <img src="all_pictures/backgrounds_and_pictures/laks.jpg"class="bestill-bilder alle_bilder"id="laks">
     <h3 class="alle_navn">Laks</h3>
     <p class="alle_priser">price:323 &#36;</p>
     <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
@@ -60,7 +70,8 @@
     </li>
 <li class="Bestillings-li">
         <div class="bestillings-diver">
-        <img src="krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
+        <img src="all_pictures/backgrounds_and_pictures/krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
+			
         <h3 class="alle_navn">krabbesuppe</h3>
         <p class="alle_priser">price:290 &#36;</p>
         <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
@@ -71,7 +82,7 @@
            <ul class="bestillings-ul">
 <li class="Bestillings-li">
 <div class="bestillings-diver">
-<img src="cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
+<img src="all_pictures/backgrounds_and_pictures/cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
 <h3 class="alle_navn">Cazuela</h3>
 <p class="alle_priser">price:320 &#36;</p>
 <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
@@ -80,7 +91,7 @@
 </li>
 <li class="Bestillings-li">
     <div class="bestillings-diver">
-    <img src="kunefe.PNG"class="bestill-bilder alle_bilder"id="laks">
+    <img src="all_pictures/backgrounds_and_pictures/kunefe.PNG"class="bestill-bilder alle_bilder"id="laks">
     <h3 class="alle_navn">Kunafe</h3>
     <p class="alle_priser">price:323 &#36;</p>
     <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
@@ -89,7 +100,7 @@
     </li>
 <li class="Bestillings-li">
         <div class="bestillings-diver">
-        <img src="masgouf.jpg"id="krabbesuppe"class="alle_bilder">
+        <img src="all_pictures/backgrounds_and_pictures/masgouf.jpg"id="krabbesuppe"class="alle_bilder">
         <h3 class="alle_navn">Masgouf</h3>
         <p class="alle_priser">price:290 &#36;</p>
         <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
@@ -97,6 +108,7 @@
         </div>
         </li>
     </ul>
+	
      <script>
     //egen kode
       function showShopingCart() {
@@ -109,9 +121,12 @@
       }
    
     </script>
+	
+	
     <script>
     //egen kode
-    var inCart=[]
+  var inCart=[]
+	
     const cart=document.querySelector('.cart')
     const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
 AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
@@ -120,34 +135,52 @@ const product={
 image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
 name:product_allContent.querySelector('.alle_navn').innerText,
 price:product_allContent.querySelector('.alle_priser').innerText,
-quantity:6
+id:inCart.indexOf()
 
 }
  var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
 if(productsincart===false){
-     var shoping_cart_header=document.getElementById("shopping-Cart-header");
-shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
+     var list_of_items=document.getElementById("list-of-items");
+list_of_items.insertAdjacentHTML('beforeend',`<div class="cart_item" id="cart_item">
    <img class="bestill-bilder"src="${product.image}"alt="${product.name}"> 
-   <h3 class="alle_navn">${product.name}</h3>
+   <h3 class="alle_navn">${product.name}
    <p class="alle_navn">${product.price}</p>
 <input type="Number"class="amount"id="amount_input"min="1"></input>
-<button id="remove"class="delte" data-action="REMOVE_ITEM">X</button>
+
+ 
     </div>`
     );
-    
+     var update=function(){
+	
+	}
     inCart.push(product);
-    AddToCartbtn.innerText="in Cart";
-   
- };
+	update();
+  
+  console.table(inCart)
+  //AddToCartbtn.disabled=true;
 
-    
+
+}
+
 })
 });
 
+
+function deletea(){
+
+
+var list=document.getElementById("list-of-items")
+list.innerHTML="<div></div>"
+inCart=[];
+}
+  
+
     </script>
+	
+	
       <script>
         // ikke min kode
-        
+       
        var sum=2;
       paypal.Buttons({
     createOrder: function(data, actions) {
@@ -175,6 +208,8 @@ shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
     }
   }).render('#paypal-button-container');
      </script>
+	
+	
     <style>
     .cart-item{
         display: grid;
@@ -193,22 +228,24 @@ shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
             <div class="row section-3-titel"><h2 id="section-3-header">Reviews from our Costumers</h2></div>
             <div class="row all-reviwes">
             <div class="col span-1-of-3">
-                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="person1.jpg"class="section-3-person-photo">Lust G</cite>
+                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="all_pictures/people_pictures/person1.jpg"class="section-3-person-photo">Lust G</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
-                <blockquote>I have used A&H for the last five years. I can't understand how i have been living without A&H. I will refer everyone I know.<br><cite><img src="person2.jpg"class="section-3-person-photo">Doyle G</cite>
+                <blockquote>I have used A&H for the last five years. I can't understand how i have been living without A&H. I will refer everyone I know.<br><cite><img src="all_pictures/people_pictures/person3.jpg"class="section-3-person-photo">Doyle G</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
-                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="person3.jpg"class="section-3-person-photo">Lust G</cite>
+                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="all_pictures/people_pictures/person2.jpg"class="section-3-person-photo">Lust G</cite>
 </blockquote>
                 </div>
             </div>
         </section>
-        <section><div class="row"><h2 id="section-4-header">About-Us</h2>
+        <section class="js--section-about-us"><div class="row"><h2 id="section-4-header">About-Us</h2>
             <p id="long-text">Hello  were A&H, your new premium food delivery service. We know you are always busy. No time for cooking.<br> So let us take care of that. we are really good at it we promise!</p>
             </div>
+		
+		<div class="js-wp-1">
         <div class="row">
         <div class="col span-1-of-3 section-4-cols">
         <i class="ion-ios-time-outline big-icon"></i>
@@ -238,14 +275,14 @@ shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
             
             
             </div>
-        
+        </div>
         </section>
     
         
 <section class="section-form">
 <form action="https://gmail.us20.list-manage.com/subscribe/post?u=af0fa8cc31b7e47edefe372bc&amp;id=f7d13e65bc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>        
  <div id="mc_embed_signup_scroll" class="row">
-	<h2>Subscribe to our mailing list</h2>
+	<h2 id="form-title">Subscribe to our mailing list</h2>
 
 <div class="mc-field-group">
 	<label for="mce-EMAIL">Email Address  <span class="asterisk"></span>
@@ -265,7 +302,8 @@ shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
 	<div class="datefield">
 		<span class="subfield monthfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> / 
 		<span class="subfield dayfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span> 
-		<span class="small-meta nowrap">( mm / dd )</span>
+		<span class="small-meta nowrap">( mm / dd )
+		</span>
 	</div>
 </div>
      <div id="mce-responses" class="clear">
@@ -281,15 +319,37 @@ shoping_cart_header.insertAdjacentHTML('afterend',`<div class="cart_item">
         
         </section>
      <footer>
-    <div class="row">
+         
+    <div>
         <h4 id="fotter-header">A&H all Rights Served</h4>
-        <p id="footer-paragraph">
-       All rights served 
-        </p>
-         </div>
-        <div class="row newsletter">
-        <div class="col span-1-of-3"><img src="logo/logo_transparent.png" id="logo_fotter"></div>
-         </div>
-       </footer>
+    </div>
+        
+    <div class="side">
+        <a href="https://www.facebook.com" target="_blank"><i class="ion-social-facebook"id="facebook-icon"></i></a> 
+        <a href="https://twitter.com/Ameer92266953" target="_blank"><i class="ion-social-twitter"id="twitter-icon"></i></a>
+		  <a href="https://www.youtube.com" target="_blank"><i class="ion-social-youtube"id="youtube-icon"></i></a>
+    </div>
+         
+   
+         
+    </footer>
+     <script>
+	function orderNow(){
+		 window.scrollBy (0, 550);
+	}
+		function contactUS(){
+		 window.scrollBy (0, 1400);
+		}
+	var typed2 = new Typed('#first-H2', {
+    strings: ["<h4>Buy now</h4>","<h4>Order Now</h4>"],
+    typeSpeed: 100,
+    backSpeed: 0,
+    fadeOut: true,
+    loop: true
+  });
+		</script>   
+        
+    
+     
     </body> 
 </html>
