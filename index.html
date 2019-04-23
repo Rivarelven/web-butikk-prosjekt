@@ -1,6 +1,6 @@
 <html>
     <head>
-    <title>fra fjord til fjord</title>
+    <title>A&H</title>
     <!-- style.css er min css fil-->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
     <link rel=stylesheet type="text/css"href=style.css>
@@ -54,7 +54,7 @@
 <div class="bestillings-diver">
 <img src="all_pictures/backgrounds_and_pictures/torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
 <h3 class="alle_navn">Torsk</h3>
-<p class="alle_priser">price:270 &#36;</p>
+<div>  <p class="alle_priser">price:</p><span class="number" type="number">270</span></div>
 <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
 <br>
 </div>
@@ -63,7 +63,7 @@
     <div class="bestillings-diver">
     <img src="all_pictures/backgrounds_and_pictures/laks.jpg"class="bestill-bilder alle_bilder"id="laks">
     <h3 class="alle_navn">Laks</h3>
-    <p class="alle_priser">price:323 &#36;</p>
+		<div>  <p class="alle_priser">price:</p><span class="number"type="number">323</span></div>
     <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
     <br>
     </div>
@@ -73,7 +73,8 @@
         <img src="all_pictures/backgrounds_and_pictures/krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
 			
         <h3 class="alle_navn">krabbesuppe</h3>
-        <p class="alle_priser">price:290 &#36;</p>
+	<div><p class="alle_priser">price:</p><span class="number" type="number">290</span></div>
+        
         <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
         <br>
         </div>
@@ -84,7 +85,8 @@
 <div class="bestillings-diver">
 <img src="all_pictures/backgrounds_and_pictures/cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
 <h3 class="alle_navn">Cazuela</h3>
-<p class="alle_priser">price:320 &#36;</p>
+<div>  <p class="alle_priser">price:</p><span class="number"type="number">320</span></div>
+
 <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
 <br>
 </div>
@@ -93,7 +95,8 @@
     <div class="bestillings-diver">
     <img src="all_pictures/backgrounds_and_pictures/kunefe.PNG"class="bestill-bilder alle_bilder"id="laks">
     <h3 class="alle_navn">Kunafe</h3>
-    <p class="alle_priser">price:323 &#36;</p>
+    
+	<div>  <p class="alle_priser">price:</p><span class="number"type="number">323</span></div>
     <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
     <br>
     </div>
@@ -102,7 +105,8 @@
         <div class="bestillings-diver">
         <img src="all_pictures/backgrounds_and_pictures/masgouf.jpg"id="krabbesuppe"class="alle_bilder">
         <h3 class="alle_navn">Masgouf</h3>
-        <p class="alle_priser">price:290 &#36;</p>
+			<div>  <p class="alle_priser">price:</p><span class="number"type="number">290</span></div>
+      
         <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
         <br>
         </div>
@@ -125,6 +129,7 @@
 	
     <script>
     //egen kode
+	
   var inCart=[]
 	
     const cart=document.querySelector('.cart')
@@ -135,22 +140,33 @@ const product={
 image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
 name:product_allContent.querySelector('.alle_navn').innerText,
 price:product_allContent.querySelector('.alle_priser').innerText,
-id:inCart.indexOf()
+amount:product_allContent.querySelector('.number').innerText
+
 
 }
+  
+
  var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
 if(productsincart===false){
      var list_of_items=document.getElementById("list-of-items");
 list_of_items.insertAdjacentHTML('beforeend',`<div class="cart_item" id="cart_item">
-   <img class="bestill-bilder"src="${product.image}"alt="${product.name}"> 
+   <img class="bestill-bilder"src="${product.image}"alt="${product.name}" > 
    <h3 class="alle_navn">${product.name}
    <p class="alle_navn">${product.price}</p>
-<input type="Number"class="amount"id="amount_input"min="1"></input>
+   <span class="price">${product.amount}</span>
+
+<input type="Number"class="amount"min="1"value="1"></input>
 
  
-    </div>`
+		</div>`
+
+
+
     );
-     var update=function(){
+	
+	var input_amount=document.querySelectorAll('.amount');
+
+    function update(){
 	
 	}
     inCart.push(product);
@@ -158,12 +174,14 @@ list_of_items.insertAdjacentHTML('beforeend',`<div class="cart_item" id="cart_it
   
   console.table(inCart)
   //AddToCartbtn.disabled=true;
-
-
+  var numa=document.querySelector('.number')
+ var suma=Number(product.amount)*Number(numa);
+console.log(suma)
 }
 
 })
 });
+
 
 
 function deletea(){
@@ -173,7 +191,7 @@ var list=document.getElementById("list-of-items")
 list.innerHTML="<div></div>"
 inCart=[];
 }
-  
+
 
     </script>
 	
@@ -228,7 +246,7 @@ inCart=[];
             <div class="row section-3-titel"><h2 id="section-3-header">Reviews from our Costumers</h2></div>
             <div class="row all-reviwes">
             <div class="col span-1-of-3">
-                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="all_pictures/people_pictures/person1.jpg"class="section-3-person-photo">Lust G</cite>
+                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="all_pictures/people_pictures/person1.jpg"class="section-3-person-photo" >Lust G</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
@@ -236,7 +254,7 @@ inCart=[];
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
-                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="all_pictures/people_pictures/person2.jpg"class="section-3-person-photo">Lust G</cite>
+                <blockquote>This is one of my favorite places. The waitress did an excellent job. The food was cooked to perfection. I'm definitely coming back for more!<br><cite><img src="all_pictures/people_pictures/person2.jpg"class="section-3-person-photo">Tyrone Johnson</cite>
 </blockquote>
                 </div>
             </div>
@@ -285,7 +303,7 @@ inCart=[];
 	<h2 id="form-title">Subscribe to our mailing list</h2>
 
 <div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk"></span>
+	<label for="mce-EMAIL">Email   <span class="asterisk"></span>
 </label>
 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
@@ -319,11 +337,30 @@ inCart=[];
         
         </section>
      <footer>
+		 
+	
          
     <div>
         <h4 id="fotter-header">A&H all Rights Served</h4>
     </div>
-        
+       	 <div id="footer-text">
+        <li class = 'footerCon' id = 'footerCon' onclick = 'contactUs2()'>Top</li>
+        <li class = 'footerCon' id = 'footerOrd' onclick = 'orderNow2()'>Order now</li>     
+    </div>
+         
+         <script>
+            
+             function contactUs2()
+             {
+                 window.scrollTo (0, 0);
+             }
+             
+             function orderNow2()
+             {
+                 window.scrollTo (0, 550);
+             }
+			 
+		 </script>
     <div class="side">
         <a href="https://www.facebook.com" target="_blank"><i class="ion-social-facebook"id="facebook-icon"></i></a> 
         <a href="https://twitter.com/Ameer92266953" target="_blank"><i class="ion-social-twitter"id="twitter-icon"></i></a>
