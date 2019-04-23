@@ -13,7 +13,7 @@ display: inline-block;
 padding-right: 40px;
 margin-top:25px}
 header{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("laks.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("all_pictures/backgrounds_and_pictures/laks.jpg");
 background-size: cover;
 height: 100vh;}
 #first-H2::after{
@@ -23,7 +23,8 @@ height: 2px;
 background-color: orange;
 display: block;
 margin-left: 637px;
-margin: 0 auto;}
+margin: 0 auto;
+}
 #first-H2{
     text-align: center;}
 #contact{margin-top: 16px;}
@@ -66,7 +67,8 @@ margin-bottom: 16px;}
     background-color: black;}
 .big-icon{
 font-size: 36px;
-color:coral;}
+color:coral;
+margin-left: 100px;}
 #paypal-button-container{
     width: 50px;
 margin-top: 190px;
@@ -114,7 +116,7 @@ cite{font-size: 90%;
 margin-top: 25px;
 display: block;}
 .section-testimonials{
-background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("torsk.jpg");
+background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("all_pictures/backgrounds_and_pictures/torsk.jpg");
 background-attachment: fixed;
     background-size: cover;
     height: 50vh;
@@ -141,7 +143,11 @@ margin-top: -80px;}
 #remove{
 color: white;
     background: red;
-    float: right
+    float: right;
+height: 25px;
+width: 120px;
+margin-top: 150px;
+margin-right: 60px;
 }
 #section-4-header{
 
@@ -179,7 +185,7 @@ footer{
 }
 #footer-paragraph{
     color: white;
-    opacity: 2;
+   
 }
 #newsletter-email{
 margin-top: -1px;
@@ -210,6 +216,57 @@ margin-top: -80px;
 form{
     margin-left: 480px;
 }
-#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;}
 
+
+#twitter-icon{
+	color: aqua;
+}
+#facebook-icon{
+	color: blue;
+}
+#youtube-icon{
+	color: red;
+
+}
+.buy-button {background-image: linear-gradient(rgba(255, 177, 0, 0.9),white);color: black;border-radius: 36px;
+margin-top: 15px;}
+#form-title{
+	margin-top: 50px;
+}
+.number{margin-top:-17;margin-left: 40px;}
+.footerCon
+{
+    color: gray;
+    display: inline;
+    font-size: 20px;
+    margin: 10px;
+	;
+}
+#footer-text{
+	margin-left: 520px;
+	margin-top: 20px;
+}
+.side{
+	margin-left: 1000px;
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(rgba(255, 177, 0, 0.9),white); 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(rgba(255, 177, 0, 0.9),(255, 177, 0, 0.9)); 
 }
