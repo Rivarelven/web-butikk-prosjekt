@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- ikke min fil-->
-        <script
+       <script
     src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
-  </script>
+		</script>
 <link rel="stylesheet"type="text/css"href="all_pictures/icons_and_logos/ionicons/ionicons-2.0.1/css/ionicons.css">   
 <link rel="Icon"type="image/png"href="all_pictures/icons_and_logos/favicon.png">
   <!-- normalize.css er fil fra nett-->
@@ -33,7 +33,7 @@
            <li class="header-li"><i class="ion-ios-cart big-icon" onclick="showShopingCart()"></i></li>
             <li class="header-li" id="contact-us"onclick="contactUS()">contact us</li>
         <li class="header-li" id="order-now" onclick="orderNow()">order now</li>
-        <li class="header-li" id="Home">Home</li> 
+     
         </div>
             </ul>
         </nav>
@@ -41,6 +41,8 @@
         
         <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">Shoping Cart</h2>
 		<div id="list-of-items"></div>
+		<h4 id="total">total:</h4>
+<span id="total_sum"></span>
 			<button id="remove"onclick="deletea()">Empty Cart</button>
          <div id="paypal-button-container"></div> 
     </div>
@@ -139,8 +141,9 @@ const product_allContent=AddToCartbtn.parentNode;
 const product={
 image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
 name:product_allContent.querySelector('.alle_navn').innerText,
-price:product_allContent.querySelector('.alle_priser').innerText,
-amount:product_allContent.querySelector('.number').innerText
+amount:3,
+price:Number(product_allContent.querySelector('.number').innerText),
+price_text:"price: "
 
 
 }
@@ -148,35 +151,34 @@ amount:product_allContent.querySelector('.number').innerText
 
  var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
 if(productsincart===false){
+	    
      var list_of_items=document.getElementById("list-of-items");
 list_of_items.insertAdjacentHTML('beforeend',`<div class="cart_item" id="cart_item">
    <img class="bestill-bilder"src="${product.image}"alt="${product.name}" > 
    <h3 class="alle_navn">${product.name}
-   <p class="alle_navn">${product.price}</p>
-   <span class="price">${product.amount}</span>
+   <p class="alle_navn">${product.price_text}</p>
+   <span class="price">${product.price}</span>
 
-<input type="Number"class="amount"min="1"value="1"></input>
+<input type="Number"class="amount"min="1"value=${product.amount}></input>
 
- 
+	
 		</div>`
 
 
 
     );
 	
-	var input_amount=document.querySelectorAll('.amount');
 
-    function update(){
-	
-	}
+var totala=Number(product.amount)*product.price;
+console.log(totala)
+var totaltext=document.getElementById("total_sum")
+totaltext.innerHTML=totala;
+console.table(totala)
     inCart.push(product);
-	update();
-  
+
   console.table(inCart)
-  //AddToCartbtn.disabled=true;
-  var numa=document.querySelector('.number')
- var suma=Number(product.amount)*Number(numa);
-console.log(suma)
+ 
+
 }
 
 })
@@ -190,6 +192,7 @@ function deletea(){
 var list=document.getElementById("list-of-items")
 list.innerHTML="<div></div>"
 inCart=[];
+
 }
 
 
@@ -199,7 +202,7 @@ inCart=[];
       <script>
         // ikke min kode
        
-       var sum=2;
+       
       paypal.Buttons({
     createOrder: function(data, actions) {
       return actions.order.create({
@@ -207,26 +210,16 @@ inCart=[];
         name:"The Total",
           amount: {
            //value: '0.01'
-              value:sum
+            
           }
         }]
       });
     },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        alert('Transaction completed by ' + details.payer.name.given_name);
-        // Call your server to save the transaction
-        return fetch('/paypal-transaction-complete', {
-          method: 'post',
-          body: JSON.stringify({
-            orderID: data.orderID
-          })
-        });
-      });
+    onApprove: function() {
+      
     }
   }).render('#paypal-button-container');
      </script>
-	
 	
     <style>
     .cart-item{
@@ -246,11 +239,11 @@ inCart=[];
             <div class="row section-3-titel"><h2 id="section-3-header">Reviews from our Costumers</h2></div>
             <div class="row all-reviwes">
             <div class="col span-1-of-3">
-                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="all_pictures/people_pictures/person1.jpg"class="section-3-person-photo" >Lust G</cite>
+                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="all_pictures/people_pictures/person1.jpg"class="section-3-person-photo" >Bill Williams</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
-                <blockquote>I have used A&H for the last five years. I can't understand how i have been living without A&H. I will refer everyone I know.<br><cite><img src="all_pictures/people_pictures/person3.jpg"class="section-3-person-photo">Doyle G</cite>
+                <blockquote>I have used A&H for the last five years. I can't understand how i have been living without A&H. I will refer everyone I know.<br><cite><img src="all_pictures/people_pictures/person3.jpg"class="section-3-person-photo">Harold rivarson</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
@@ -385,7 +378,7 @@ inCart=[];
     loop: true
   });
 		</script>   
-        
+   
     
      
     </body> 
