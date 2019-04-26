@@ -107,7 +107,7 @@
         <div class="bestillings-diver">
         <img src="all_pictures/backgrounds_and_pictures/masgouf.jpg"id="krabbesuppe"class="alle_bilder">
         <h3 class="alle_navn">Masgouf</h3>
-			<div>  <p class="alle_priser">price:</p><span class="number"type="number">290</span></div>
+			<div>  <p class="alle_priser">price:</p><span class="number"type="number">120</span></div>
       
         <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
         <br>
@@ -132,57 +132,80 @@
     <script>
     //egen kode
 	
-  var inCart=[]
+  var inCart=[];
+  const cart=document.querySelector('.cart');	
+  const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
+		
+  AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
+	const product_allContent=AddToCartbtn.parentNode;
+	const product={
+		image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
+		name:product_allContent.querySelector('.alle_navn').innerText,
+		amount:1,
+		price:Number(product_allContent.querySelector('.number').innerText),
+		price_text:"price: "
+	}
 	
-    const cart=document.querySelector('.cart')
-    const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
-AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
-const product_allContent=AddToCartbtn.parentNode;
-const product={
-image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
-name:product_allContent.querySelector('.alle_navn').innerText,
-amount:3,
-price:Number(product_allContent.querySelector('.number').innerText),
-price_text:"price: "
+    var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
+    if(productsincart===false){
+		var list_of_items=document.getElementById("list-of-items");
+	    list_of_items.insertAdjacentHTML(
+			'beforeend',`<div class="cart_item" id="cart_item">
+		   <img class="bestill-bilder"src="${product.image}"alt="${product.name}" > 
+		   <h3 class="alle_navn">${product.name}
+		   <p class="alle_navn">${product.price_text}</p>
+		   <span class="price">${product.price}</span>
+		   <input type="Number"class="amount"min="1"value="${product.amount}"></input>
+		   </div>`
+	   );
 
+	var input=document.querySelector('.amount').value
+	var totala=Number(input)*product.price;
+	console.log(totala)
+	var totaltext=document.getElementById("total_sum")
+	totaltext.innerHTML=totala;
+	console.table(totala);
+		inCart.push(product);
 
-}
-  
+	  console.table(inCart)
+	 
+				 const selectedElement =document.querySelector('.amount') ;
 
- var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
-if(productsincart===false){
-	    
-     var list_of_items=document.getElementById("list-of-items");
-list_of_items.insertAdjacentHTML('beforeend',`<div class="cart_item" id="cart_item">
-   <img class="bestill-bilder"src="${product.image}"alt="${product.name}" > 
-   <h3 class="alle_navn">${product.name}
-   <p class="alle_navn">${product.price_text}</p>
-   <span class="price">${product.price}</span>
-
-<input type="Number"class="amount"min="1"value=${product.amount}></input>
-
+	selectedElement.addEventListener('change', (event) => {
+		var a=document.querySelectorAll('.price');
+		
+		var b=Number(document.querySelector('.amount').value);
 	
-		</div>`
-
-
-
-    );
+		var result =document.getElementById("total_sum").innerHTML;
+		
 	
+		var sum=0;
+		sum=Number(inCart[0].price)*b;
+		for(var i=1;i<a.length;i++)
+		{
+			if(1+1===2){
+	a[i].value===b
+	}
+			var nysum=sum+=Number(inCart[i].price)*b;
+			result.innerHTML=== sum;
+		if(b--){
+		var nysum=sum-=Number(inCart[i].price)*b;
+		result.innerHTML= sum;
+		}
 
-var totala=Number(product.amount)*product.price;
-console.log(totala)
-var totaltext=document.getElementById("total_sum")
-totaltext.innerHTML=totala;
-console.table(totala)
-    inCart.push(product);
+console.log(sum);
 
-  console.table(inCart)
- 
-
-}
+	}
+		
+		})	
+				
+};
 
 })
-});
+  })
+									  
+
+
 
 
 
@@ -192,7 +215,7 @@ function deletea(){
 var list=document.getElementById("list-of-items")
 list.innerHTML="<div></div>"
 inCart=[];
-
+var sum=document.getElementById("total_sum").innerHTML=0;
 }
 
 
