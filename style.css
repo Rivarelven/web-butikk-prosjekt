@@ -13,7 +13,7 @@ display: inline-block;
 padding-right: 40px;
 margin-top:25px}
 header{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("all_pictures/backgrounds_and_pictures/laks.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("laks.jpg");
 background-size: cover;
 height: 100vh;}
 #first-H2::after{
@@ -116,7 +116,7 @@ cite{font-size: 90%;
 margin-top: 25px;
 display: block;}
 .section-testimonials{
-background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("all_pictures/backgrounds_and_pictures/torsk.jpg");
+background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("torsk.jpg");
 background-attachment: fixed;
     background-size: cover;
     height: 50vh;
@@ -169,7 +169,7 @@ margin-top: 6px;
 margin-left: 60px;
 }
 .section-4-Pelement{
-margin-top: 6px:
+margin-top: 6px;
 }
 #long-text{line-height: 145%;width: 35%;margin-left: 33%;margin-top: 8px;
 
@@ -269,4 +269,7 @@ margin-top: 15px;}
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(rgba(255, 177, 0, 0.9),(255, 177, 0, 0.9)); 
+}
+#mce-EMAIL{
+	margin-left: 36px;
 }
