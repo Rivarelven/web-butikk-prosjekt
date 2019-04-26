@@ -10,8 +10,8 @@
        <script
     src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
 		</script>
-<link rel="stylesheet"type="text/css"href="all_pictures/icons_and_logos/ionicons/ionicons-2.0.1/css/ionicons.css">   
-<link rel="Icon"type="image/png"href="all_pictures/icons_and_logos/favicon.png">
+<link rel="stylesheet"type="text/css"href="ionicons/ionicons-2.0.1/css/ionicons.css">   
+<link rel="Icon"type="image/png"href="favicon.png">
   <!-- normalize.css er fil fra nett-->
 <link rel="stylesheet"type="text/css"href="normalize.css">
   <!-- grid.css er fil fra nett-->
@@ -28,7 +28,7 @@
     <header>
     <nav>
         <ul class="main-nav">
-        <img src="all_pictures/icons_and_logos/logo_transparent.png"id="logo">
+        <img src="logo_transparent.png"id="logo">
         <div id="navigation-div">
            <li class="header-li"><i class="ion-ios-cart big-icon" onclick="showShopingCart()"></i></li>
             <li class="header-li" id="contact-us"onclick="contactUS()">contact us</li>
@@ -54,7 +54,7 @@
      <ul class="bestillings-ul">
 <li class="Bestillings-li">
 <div class="bestillings-diver">
-<img src="all_pictures/backgrounds_and_pictures/torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
+<img src="torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
 <h3 class="alle_navn">Torsk</h3>
 <div>  <p class="alle_priser">price:</p><span class="number" type="number">270</span></div>
 <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
@@ -63,7 +63,7 @@
 </li>
 <li class="Bestillings-li">
     <div class="bestillings-diver">
-    <img src="all_pictures/backgrounds_and_pictures/laks.jpg"class="bestill-bilder alle_bilder"id="laks">
+    <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
     <h3 class="alle_navn">Laks</h3>
 		<div>  <p class="alle_priser">price:</p><span class="number"type="number">323</span></div>
     <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
@@ -72,7 +72,7 @@
     </li>
 <li class="Bestillings-li">
         <div class="bestillings-diver">
-        <img src="all_pictures/backgrounds_and_pictures/krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
+        <img src="krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
 			
         <h3 class="alle_navn">krabbesuppe</h3>
 	<div><p class="alle_priser">price:</p><span class="number" type="number">290</span></div>
@@ -85,7 +85,7 @@
            <ul class="bestillings-ul">
 <li class="Bestillings-li">
 <div class="bestillings-diver">
-<img src="all_pictures/backgrounds_and_pictures/cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
+<img src="cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
 <h3 class="alle_navn">Cazuela</h3>
 <div>  <p class="alle_priser">price:</p><span class="number"type="number">320</span></div>
 
@@ -95,7 +95,7 @@
 </li>
 <li class="Bestillings-li">
     <div class="bestillings-diver">
-    <img src="all_pictures/backgrounds_and_pictures/kunefe.PNG"class="bestill-bilder alle_bilder"id="laks">
+    <img src="kunefe.PNG"class="bestill-bilder alle_bilder"id="laks">
     <h3 class="alle_navn">Kunafe</h3>
     
 	<div>  <p class="alle_priser">price:</p><span class="number"type="number">323</span></div>
@@ -105,7 +105,7 @@
     </li>
 <li class="Bestillings-li">
         <div class="bestillings-diver">
-        <img src="all_pictures/backgrounds_and_pictures/masgouf.jpg"id="krabbesuppe"class="alle_bilder">
+        <img src="masgouf.jpg"id="krabbesuppe"class="alle_bilder">
         <h3 class="alle_navn">Masgouf</h3>
 			<div>  <p class="alle_priser">price:</p><span class="number"type="number">120</span></div>
       
@@ -184,14 +184,12 @@
 		for(var i=1;i<a.length;i++)
 		{
 			if(1+1===2){
-	a[i].value===b
+				var sas=product.amount=b
+	inCart[i].value===b
 	}
 			var nysum=sum+=Number(inCart[i].price)*b;
-			result.innerHTML=== sum;
-		if(b--){
-		var nysum=sum-=Number(inCart[i].price)*b;
-		result.innerHTML= sum;
-		}
+			result=document.getElementById("total_sum").innerHTML=nysum;
+		
 
 console.log(sum);
 
@@ -262,15 +260,15 @@ var sum=document.getElementById("total_sum").innerHTML=0;
             <div class="row section-3-titel"><h2 id="section-3-header">Reviews from our Costumers</h2></div>
             <div class="row all-reviwes">
             <div class="col span-1-of-3">
-                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="all_pictures/people_pictures/person1.jpg"class="section-3-person-photo" >Bill Williams</cite>
+                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="person1.jpg"class="section-3-person-photo" >Bill Williams</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
-                <blockquote>I have used A&H for the last five years. I can't understand how i have been living without A&H. I will refer everyone I know.<br><cite><img src="all_pictures/people_pictures/person3.jpg"class="section-3-person-photo">Harold rivarson</cite>
+                <blockquote>I have used A&H for the last five years. I can't understand how i have been living without A&H. I will refer everyone I know.<br><cite><img src="person3.jpg"class="section-3-person-photo">Harold rivarson</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
-                <blockquote>This is one of my favorite places. The waitress did an excellent job. The food was cooked to perfection. I'm definitely coming back for more!<br><cite><img src="all_pictures/people_pictures/person2.jpg"class="section-3-person-photo">Tyrone Johnson</cite>
+                <blockquote>This is one of my favorite places. The waitress did an excellent job. The food was cooked to perfection. I'm definitely coming back for more!<br><cite><img src="person2.jpg"class="section-3-person-photo">Tyrone Johnson</cite>
 </blockquote>
                 </div>
             </div>
