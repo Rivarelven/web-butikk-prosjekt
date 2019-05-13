@@ -1,17 +1,22 @@
+	<link rel="stylesheet" media="screen and (min-width: 800px)" href="style.css">
+
+	<link rel="stylesheet" media="screen and (max-width: 800px)" href="mobileStyle.css">
 <html>
     <head>
     <title>A&H</title>
     <!-- style.css er min css fil-->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-    <link rel=stylesheet type="text/css"href=style.css>
+		<link rel="stylesheet" media="screen and (min-width: 800px)" href="style.css">
+
+	<link rel="stylesheet" media="screen and (max-width: 800px)" href="mobileStyle.css">
+	<!--<link rel="stylesheet"  href="mobileStyle.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="google-site-verification" content="CyxrugJO_8TNJr_WvFGj6ERz7SUCpGNhrPlLZ5178LI" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- ikke min fil-->
        <script
     src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
 		</script>
-<link rel="stylesheet"type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">   
+<link rel="stylesheet"type="text/css"href="ionicons/ionicons-2.0.1/css/ionicons.css">   
 <link rel="Icon"type="image/png"href="favicon.png">
   <!-- normalize.css er fil fra nett-->
 <link rel="stylesheet"type="text/css"href="normalize.css">
@@ -27,12 +32,14 @@
     <body>
     
     <header>
-    <nav>
+    <nav id="nav">
         <ul class="main-nav">
         <img src="logo_transparent.png"id="logo">
+		<i class="ion-navicon-round big-icon hidden-pc-icon navigation-icon" onclick="showMobileMenu()"></i>
         <div id="navigation-div">
-           <li class="header-li"><i class="ion-ios-cart big-icon" onclick="showShopingCart()"></i></li>
+           <li class="header-li"><i class="ion-ios-cart big-icon white-icon" onclick="showShopingCart()"></i></li>
             <li class="header-li" id="contact-us"onclick="contactUS()">contact us</li>
+			 <li class="header-li" id="contact-us-mobile"onclick="contactUS_Mobile()">contact us</li>
         <li class="header-li" id="order-now" onclick="orderNow()">order now</li>
      
         </div>
@@ -125,6 +132,15 @@
         } else {
           x.style.display = "none";
         }
+	
+      }
+		  function showMobileMenu() {
+        var x = document.getElementById("navigation-div");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
       }
    
     </script>
@@ -182,26 +198,29 @@
 	
 		var sum=0;
 		sum=Number(inCart[0].price)*b;
-		for(var i=1;i<a.length;i++)
-		{
-			if(1+1===2){
+		//for(var i=1;i<a.length;i++)
+		//{
+		/*	if(1+1===2){
 				var sas=product.amount=b
+				console.log(sas)
 	inCart[i].value===b
-	}
-			var nysum=sum+=Number(inCart[i].price)*b;
-			result=document.getElementById("total_sum").innerHTML=nysum;
+	}*/
+			//var nysum=sum+=Number(inCart[i].price)*b;
+			for(var i=0;i<inCart.length;i++){var sum=Number(inCart[i].price)*Number(a[i].value);console.log(sum);nysum=sum+inCart[i].price*Number(a[i].value)}
+
+			result=document.getElementById("total_sum").innerHTML=Number(nysum);
 		
 
-console.log(sum);
+console.log(nysum);
 
-	}
+	})
 		
-		})	
+		}	
 				
-};
+});
 
 })
-  })
+  
 									  
 
 
@@ -363,23 +382,11 @@ var sum=document.getElementById("total_sum").innerHTML=0;
         <li class = 'footerCon' id = 'footerOrd' onclick = 'orderNow2()'>Order now</li>     
     </div>
          
-         <script>
-            
-             function contactUs2()
-             {
-                 window.scrollTo (0, 0);
-             }
-             
-             function orderNow2()
-             {
-                 window.scrollTo (0, 550);
-             }
-			 
-		 </script>
+        
     <div class="side">
         <a href="https://www.facebook.com" target="_blank"><i class="ion-social-facebook"id="facebook-icon"></i></a> 
         <a href="https://twitter.com/Ameer92266953" target="_blank"><i class="ion-social-twitter"id="twitter-icon"></i></a>
-		  <a href="https://www.youtube.com" target="_blank"><i class="ion-social-youtube"id="youtube-icon"></i></a>
+		  <a href="https://www.youtube.com" target="_blank"><i class="ion-social-youtube"id="youtube-icon" ></i></a>
     </div>
          
    
@@ -391,6 +398,10 @@ var sum=document.getElementById("total_sum").innerHTML=0;
 	}
 		function contactUS(){
 		 window.scrollBy (0, 1400);
+		}
+		 
+		 function contactUS_Mobile(){
+		 window.scrollBy (0, 3400);
 		}
 	var typed2 = new Typed('#first-H2', {
     strings: ["<h4>Buy now</h4>","<h4>Order Now</h4>"],
