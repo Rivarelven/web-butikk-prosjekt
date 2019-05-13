@@ -1,7 +1,4 @@
-	<link rel="stylesheet" media="screen and (min-width: 800px)" href="style.css">
-
-	<link rel="stylesheet" media="screen and (max-width: 800px)" href="mobileStyle.css">
-<html>
+	<html>
     <head>
     <title>A&H</title>
     <!-- style.css er min css fil-->
@@ -30,7 +27,8 @@
 
 </head>
     <body>
-    
+
+	
     <header>
     <nav id="nav">
         <ul class="main-nav">
@@ -148,6 +146,7 @@
 	
     <script>
     //egen kode
+//egen kode
 	
   var inCart=[];
   const cart=document.querySelector('.cart');	
@@ -198,29 +197,26 @@
 	
 		var sum=0;
 		sum=Number(inCart[0].price)*b;
-		//for(var i=1;i<a.length;i++)
-		//{
-		/*	if(1+1===2){
+		for(var i=1;i<a.length;i++)
+		{
+			if(1+1===2){
 				var sas=product.amount=b
-				console.log(sas)
 	inCart[i].value===b
-	}*/
-			//var nysum=sum+=Number(inCart[i].price)*b;
-			for(var i=0;i<inCart.length;i++){var sum=Number(inCart[i].price)*Number(a[i].value);console.log(sum);nysum=sum+inCart[i].price*Number(a[i].value)}
-
-			result=document.getElementById("total_sum").innerHTML=Number(nysum);
+	}
+			var nysum=sum+=Number(inCart[i].price)*b;
+			result=document.getElementById("total_sum").innerHTML=nysum;
 		
 
-console.log(nysum);
+console.log(sum);
 
-	})
+	}
 		
-		}	
+		})	
 				
-});
+};
 
 })
-  
+  })
 									  
 
 
@@ -416,3 +412,4 @@ var sum=document.getElementById("total_sum").innerHTML=0;
      
     </body> 
 </html>
+
