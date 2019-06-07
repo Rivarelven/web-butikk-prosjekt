@@ -1,4 +1,5 @@
-	<html>
+
+<html>
     <head>
     <title>A&H</title>
     <!-- style.css er min css fil-->
@@ -23,8 +24,26 @@
 <link rel="stylesheet"type="text/css"href="animate.css">
 <script src="jquery.waypoints.js"></script>
 <script src="jquerry_3.js"></script>
+		
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<link rel="manifest" href="favicon.png">
+<link rel="mask-icon" href="favicon.png" color="#000000">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet"type="text/css"href="font%20for%20arabic%20website.css">
+<style>
+	*{
+		font-family:  'Amiri',serif;
+	}		
+	#twentifour{
+	margin-left: 85px;	
+	margin-top: -20px;
+	
+	}
 
-
+</style>
 </head>
     <body>
 
@@ -36,43 +55,45 @@
 		<i class="ion-navicon-round big-icon hidden-pc-icon navigation-icon" onclick="showMobileMenu()"></i>
         <div id="navigation-div">
            <li class="header-li"><i class="ion-ios-cart big-icon white-icon" onclick="showShopingCart()"></i></li>
-            <li class="header-li" id="contact-us"onclick="contactUS()">contact us</li>
-			 <li class="header-li" id="contact-us-mobile"onclick="contactUS_Mobile()">contact us</li>
-        <li class="header-li" id="order-now" onclick="orderNow()">order now</li>
+			<li class="header-li"><a href="A&H.html"><img src="britain.png" id="England"alt="England"></a>
+			</li>
+			<li class="header-li"><a href="#"><img src="chile.png"id="chile"></a></li>
+			<li class="header-li" id="contact-us"onclick="contactUS()">طواصل معنه</li>
+            <li class="header-li" id="order-now" onclick="orderNow()">اىشتري اللان</li>
      
         </div>
             </ul>
         </nav>
         
         
-        <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">Shoping Cart</h2>
+        <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">سلت التسوق</h2>
 		<div id="list-of-items"></div>
-		<h4 id="total">total:</h4>
+		<h4 id="total">المجموع:</h4>
 <span id="total_sum"></span>
-			<button id="remove"onclick="deletea()">Empty Cart</button>
+<button id="remove"onclick="deletea()">سله فاغه</button>
          <div id="paypal-button-container"></div> 
     </div>
     </header>
 		
 <section>
-<h2 id="first-H2">Order Now</h2>
+        <h2 id="first-H2">احجز اللأن</h2>
 	
      <ul class="bestillings-ul">
 <li class="Bestillings-li">
 <div class="bestillings-diver">
 <img src="torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
-<h3 class="alle_navn">Torsk</h3>
-<div>  <p class="alle_priser">price:</p><span class="number" type="number">270</span></div>
-<button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+<h3 class="alle_navn">  سمك التورسك</h3>
+<div>  <p class="alle_priser">السعر:</p><span class="number" type="number">270</span></div>
+<button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
 <br>
 </div>
 </li>
 <li class="Bestillings-li">
     <div class="bestillings-diver">
     <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
-    <h3 class="alle_navn">Laks</h3>
-		<div>  <p class="alle_priser">price:</p><span class="number"type="number">323</span></div>
-    <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+    <h3 class="alle_navn">سمك اللاكس</h3>
+    <div>  <p class="alle_priser">السعر:</p><span class="number"type="number">323</span></div>
+    <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
     <br>
     </div>
     </li>
@@ -80,10 +101,10 @@
         <div class="bestillings-diver">
         <img src="krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
 			
-        <h3 class="alle_navn">krabbesuppe</h3>
-	<div><p class="alle_priser">price:</p><span class="number" type="number">290</span></div>
-        
-        <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+        <h3 class="alle_navn">حساء السمك</h3>
+        <div><p class="alle_priser">السعر:</p><span class="number" type="number">290</span></div>
+            
+            <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
         <br>
         </div>
         </li>
@@ -92,33 +113,34 @@
 <li class="Bestillings-li">
 <div class="bestillings-diver">
 <img src="cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
-<h3 class="alle_navn">Cazuela</h3>
-<div>  <p class="alle_priser">price:</p><span class="number"type="number">320</span></div>
+<h3 class="alle_navn">حساء الخدراوات</h3>
+<div>  <p class="alle_priser">السعر:</p><span class="number"type="number">320</span></div>
 
-<button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+<button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
 <br>
 </div>
 </li>
 <li class="Bestillings-li">
     <div class="bestillings-diver">
     <img src="kunefe.PNG"class="bestill-bilder alle_bilder"id="laks">
-    <h3 class="alle_navn">Kunafe</h3>
+    <h3 class="alle_navn">الكنافه</h3>
     
-	<div>  <p class="alle_priser">price:</p><span class="number"type="number">323</span></div>
-    <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+	<div>  <p class="alle_priser">السعر:</p><span class="number"type="number">323</span></div>
+    <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
     <br>
     </div>
     </li>
 <li class="Bestillings-li">
         <div class="bestillings-diver">
         <img src="masgouf.jpg"id="krabbesuppe"class="alle_bilder">
-        <h3 class="alle_navn">Masgouf</h3>
-			<div>  <p class="alle_priser">price:</p><span class="number"type="number">120</span></div>
-      
-        <button class="buy-button"data-action="Add-to-Cart">Buy Now</button>
+        <h3 class="alle_navn">سمك المزكوف</h3>
+        <div>  <p class="alle_priser">السعر:</p><span class="number"type="number">120</span></div>
+  
+    <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
         <br>
         </div>
         </li>
+		
     </ul>
 	
      <script>
@@ -159,7 +181,7 @@
 		name:product_allContent.querySelector('.alle_navn').innerText,
 		amount:1,
 		price:Number(product_allContent.querySelector('.number').innerText),
-		price_text:"price: "
+		price_text:"السعر: "
 	}
 	
     var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
@@ -273,84 +295,94 @@ var sum=document.getElementById("total_sum").innerHTML=0;
     </style>
         </section>
         <section class="section-testimonials">
-            <div class="row section-3-titel"><h2 id="section-3-header">Reviews from our Costumers</h2></div>
-            <div class="row all-reviwes">
-            <div class="col span-1-of-3">
-                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="person1.jpg"class="section-3-person-photo" >Bill Williams</cite>
-</blockquote>
-                </div>
+                <div class="row section-3-titel"><h2 id="section-3-header">طعليقات الزبائن</h2></div>
+                <div class="row all-reviwes">
                 <div class="col span-1-of-3">
-                <blockquote>I have used A&H for the last five years. I can't understand how i have been living without A&H. I will refer everyone I know.<br><cite><img src="person3.jpg"class="section-3-person-photo">Harold rivarson</cite>
-</blockquote>
-                </div>
-                <div class="col span-1-of-3">
-                <blockquote>This is one of my favorite places. The waitress did an excellent job. The food was cooked to perfection. I'm definitely coming back for more!<br><cite><img src="person2.jpg"class="section-3-person-photo">Tyrone Johnson</cite>
-</blockquote>
-                </div>
-            </div>
-        </section>
-        <section class="js--section-about-us"><div class="row"><h2 id="section-4-header">About-Us</h2>
-            <p id="long-text">Hello  were A&H, your new premium food delivery service. We know you are always busy. No time for cooking.<br> So let us take care of that. we are really good at it we promise!</p>
-            </div>
-		
-		<div class="js-wp-1">
-        <div class="row">
-        <div class="col span-1-of-3 section-4-cols">
-        <i class="ion-ios-time-outline big-icon"></i>
-        <h3 class="section-4-h3element">24 Hours a day</h3>
-            <p class="section-4-Pelement">
-        we work all the time so we can serve you! order now and the food will be at your house in about 5 minutes    
-            </p>    
-            
-            </div> 
-           
-            
-             <div class="col span-1-of-3 section-4-cols">
-        <i class="ion-earth big-icon"></i>
-        <h3 class="section-4-h3element">From the river to the sea</h3>
-            <p class="section-4-Pelement">
-       we look for food every where and we search for food from the river to the sea just to make food for you!
-            </p>    
-            </div>    
-            
-             <div class="col span-1-of-3 section-4-cols">
-        <i class="ion-android-happy big-icon"></i>
-        <h3 class="section-4-h3element">100% Happy</h3>
-            <p class="section-4-Pelement">
-        if you want to enjoy your time with your family or you friends, we are alway ready to help you so you can enjoy your dinner
-            </p>    
-            </div>    
-            
-            
-            </div>
-        </div>
-        </section>
+                    <!-- بيل ويليامس-->
     
-        
+                    <blockquote> شكرا لكوم لجعله اسهل ومجانيه! ادا لم تكن متعكدا يجب عليك دومان  ان تختر اوح <br><cite><img src="person1.jpg"class="section-3-person-photo" > بيل ويليامس</cite>
+    </blockquote>
+                    </div>
+                    <div class="col span-1-of-3">
+                    <!--انا استخدم ا و خ منذو 5 سنوات-->
+                    <blockquote> لا يمكنوني ان استوعب كيف كونت اعيش بلا ا و ح! انا سوفا وخبر كول من اعرف! انا استخدم ا و ح منذو ٥ سنوات 
+    <!-- هارولد ريفارسون-->
+    <br><cite><img src="person3.jpg"class="section-3-person-photo"> هارولد ريفارسون</cite>
+    </blockquote>
+                    </div>
+					<!-- تيرون جونسن-->
+                    <div class="col span-1-of-3">
+                    <!--هذا الموقع هو واحد من المواقع الموفضله لي-->
+                    <blockquote>هذا الموقع هو واحد من المواقع الموفضله لي!النادله عملت بشكل جيد و الطعام كان جيدن! سععود الى المزيد من الطعام<br><cite><img src="person2.jpg"class="section-3-person-photo"> تيرون جونسن</cite>
+    </blockquote>
+                    </div>
+                </div>
+            </section>
+            <section class="js--section-about-us"><div class="row"><h2 id="section-4-header">معلومات عنا</h2>
+                <!--مرحبا نحن ا و ح شركت الطوسيلات الجديده نحن نعلم بءنك مشغول داءمن فنحن نقول لاك دع الطعام لانا لي اننا محترفين --->
+                <p id="long-text">مرحبا نحن ا و ح شركت الطوسيلات الجديده نحن نعلم بءنك مشغول داءمن فنحن نقول لاك دع الطعام لانا لي اننا محترفين</p>
+                </div>
+            
+            <div class="js-wp-1">
+            <div class="row">
+            <div class="col span-1-of-3 section-4-cols">
+            <i class="ion-ios-time-outline big-icon"></i>
+            <h3 class="section-4-h3element"> ساعه في اليوم<p id="twentifour">24</p>  </h3>
+                <p class="section-4-Pelement">
+                <!--نحن نشتغل طوال اليوم حتا نقدمم الطعام لك-->
+                نحن نشتغل طوال اليوم حتا نقدم الطعام لك!احجز اللان و سيسل الطعام لاك في بيتك بعد 5 دقاءق
+                </p>    
+                
+                </div> 
+               
+                
+                 <div class="col span-1-of-3 section-4-cols">
+            <i class="ion-earth big-icon"></i>
+			
+
+            <h3 class="section-4-h3element">من النهر الئ النهر</h3>
+                <p class="section-4-Pelement">
+				 نحن نبحث عن الطعام من النهر الئ البحر حتا نصنع الطعام لك
+         
+                </p>    
+                </div>    
+                
+                 <div class="col span-1-of-3 section-4-cols">
+            <i class="ion-android-happy big-icon"></i>
+            <h3 class="section-4-h3element">100% سعيد</h3>
+                <p class="section-4-Pelement">
+				اذا اترغب بل يستنتاع بواقتك مع ال عايله او الاصديقاء يسءلنا ليننا دايمن موستعدين ايخدمتك حتا تستمتع  بطامك
+           
+                </p>    
+                </div>    
+                
+                
+                </div>
+            </div>
 <section class="section-form">
 <form action="https://gmail.us20.list-manage.com/subscribe/post?u=af0fa8cc31b7e47edefe372bc&amp;id=f7d13e65bc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>        
  <div id="mc_embed_signup_scroll" class="row">
-	<h2 id="form-title">Subscribe to our mailing list</h2>
+	<h2 id="form-title">يشترك اللان</h2>
 
 <div class="mc-field-group">
-	<label for="mce-EMAIL">Email   <span class="asterisk"></span>
+	<label for="mce-EMAIL">البريد اليليكتروني   <span class="asterisk"></span>
 </label>
 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
      <div class="mc-field-group">
-	<label for="mce-FNAME">First Name </label>
+	<label for="mce-FNAME">اليسم الشخصي </label>
 	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
 </div>
     <div class="mc-field-group">
-	<label for="mce-LNAME">Last Name </label>
+	<label for="mce-LNAME">يسم العاءله </label>
 	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
 </div>
      <div class="mc-field-group size1of2">
-	<label for="mce-BIRTHDAY-month">Birthday </label>
+	<label for="mce-BIRTHDAY-month">تاريخ الميلاد </label>
 	<div class="datefield">
-		<span class="subfield monthfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> / 
-		<span class="subfield dayfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span> 
-		<span class="small-meta nowrap">( mm / dd )
+		<span class="subfield monthfield">الشهر<input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="الشهر" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> / 
+		<span class="subfield dayfield">اليوم<input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="اليوم" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span> 
+		<span class="small-meta nowrap">
 		</span>
 	</div>
 </div>
@@ -371,11 +403,11 @@ var sum=document.getElementById("total_sum").innerHTML=0;
 	
          
     <div>
-        <h4 id="fotter-header">A&H all Rights Served</h4>
+        <h4 id="fotter-header">ا و ح يتبع قوانيننا</h4>
     </div>
        	 <div id="footer-text">
-        <li class = 'footerCon' id = 'footerCon' onclick = 'contactUs2()'>Top</li>
-        <li class = 'footerCon' id = 'footerOrd' onclick = 'orderNow2()'>Order now</li>     
+        <li class = 'footerCon' id = 'footerCon' onclick = 'contactUs2()'>الئ العلا</li>
+        <li class = 'footerCon' id = 'footerOrd' onclick = 'orderNow2()'>احجز اللان</li>     
     </div>
          
         
@@ -400,7 +432,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
 		 window.scrollBy (0, 3400);
 		}
 	var typed2 = new Typed('#first-H2', {
-    strings: ["<h4>Buy now</h4>","<h4>Order Now</h4>"],
+    strings: ["<h4>اشتري اللأن</h4>","<h4>احجز اللأن</h4>"],
     typeSpeed: 100,
     backSpeed: 0,
     fadeOut: true,
