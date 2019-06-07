@@ -1,18 +1,30 @@
-.hidden-pc-icon{display:none}
+
 img.bestill-bilder{
-width: 120px;}
+width: 120px;
+}
 bestillings-diver{
     float:left;
     margin-right: 120px;
     margin-top: 40px;}
-.header-li{float:right;
+.header-li{
     
-    list-style: none;
-    color:#FF9800;
-    font-size: 129%;
+float:right;
+    
+list-style: none;
+    
+color:#FF9800;
+    
+font-size: 129%;
+    
 display: inline-block;
+    
 padding-right: 40px;
-margin-top:25px}
+    
+margin-top:25px;
+    
+text-decoration: none;
+    
+}
 header{
     background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("laks.jpg");
 background-size: cover;
@@ -216,6 +228,7 @@ margin-top: -80px;
 }
 form{
     margin-left: 480px;
+    display: grid;
 }
 #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;}
 
@@ -231,11 +244,12 @@ form{
 
 }
 .buy-button {background-image: linear-gradient(rgba(255, 177, 0, 0.9),white);color: black;border-radius: 36px;
-margin-top: 15px;}
+margin-top: 15px;
+}
 #form-title{
 	margin-top: 50px;
 }
-.number{margin-top:-17;margin-left: 40px;}
+.number{margin-top:-17;margin-left: 40px;display: inline-block;}
 .footerCon
 {
     color: gray;
@@ -274,4 +288,8 @@ margin-top: 15px;}
 #mce-EMAIL{
 	margin-left: 36px;
 }
-#contact-us-mobile{display:none}
+#contact-us-mobile{
+	display: none;
+}
+.hidden-pc-icon{ display: none; }
+
