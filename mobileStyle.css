@@ -66,15 +66,14 @@ background-size: cover;
 height: 100vh;
 
 }
-img.bestill-bilder{
-width: 120px}
+img.bestill-bilder{width: 120px;}
 .section-3-person-photo{
 width: 50px;
 margin-top: 10px;
 }
 blockquote{
 color: white;
-display: table-cell
+
 }
 #section-3-header{
 color: white;
@@ -114,9 +113,7 @@ margin-top: 15px;
 margin-left: -100px;
 text-align: center;
 }
-#contact-us{
-	display: none;
-}
+
 #fotter-header{
 	margin-top: 0px;
 }
