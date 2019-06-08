@@ -1,4 +1,5 @@
-	<html>
+
+<html>
     <head>
     <title>A&H</title>
     <!-- style.css er min css fil-->
@@ -23,7 +24,14 @@
 <link rel="stylesheet"type="text/css"href="animate.css">
 <script src="jquery.waypoints.js"></script>
 <script src="jquerry_3.js"></script>
-
+		
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<link rel="manifest" href="favicon.png">
+<link rel="mask-icon" href="favicon.png" color="#000000">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
 
 </head>
     <body>
@@ -36,6 +44,9 @@
 		<i class="ion-navicon-round big-icon hidden-pc-icon navigation-icon" onclick="showMobileMenu()"></i>
         <div id="navigation-div">
            <li class="header-li"><i class="ion-ios-cart big-icon white-icon" onclick="showShopingCart()"></i></li>
+			<li class="header-li"><a href="A&H%20%E2%80%93%20Arabic.html"><img src="iraq.png" id="iraq"></a>
+			</li>
+			<li class="header-li"><a href="#"><img src="chile.png"id="chile"></a></li>
             <li class="header-li" id="contact-us"onclick="contactUS()">contact us</li>
 			 <li class="header-li" id="contact-us-mobile"onclick="contactUS_Mobile()">contact us</li>
         <li class="header-li" id="order-now" onclick="orderNow()">order now</li>
@@ -119,6 +130,7 @@
         <br>
         </div>
         </li>
+		
     </ul>
 	
      <script>
@@ -156,7 +168,7 @@
 	const product_allContent=AddToCartbtn.parentNode;
 	const product={
 		image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
-		name:product_allContent.querySelector('.alle_navn').innerText,
+name:product_allContent.querySelector('.alle_navn').innerText,
 		amount:1,
 		price:Number(product_allContent.querySelector('.number').innerText),
 		price_text:"price: "
