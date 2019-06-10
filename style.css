@@ -1,7 +1,8 @@
-.hidden-pc-icon{ display: none; }
+
 img.bestill-bilder{
 width: 120px;
 }
+.hidden-pc-icon{display:none;}
 bestillings-diver{
     float:left;
     margin-right: 120px;
