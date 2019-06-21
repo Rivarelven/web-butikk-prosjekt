@@ -26,8 +26,9 @@ text-decoration: none;
 }
 header{
     background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("laks.jpg");
-background-size: cover;
-height: 100vh;}
+    background-size: cover;
+    height: 100vh;
+    }
 #first-H2::after{
 content: "";
 width: 130px;
@@ -149,7 +150,7 @@ margin-top: 2px;
     margin-top: 36px;
 }
 .amount{width: 30px;
-margin-left: 150px;
+
 margin-top: -80px;}
 
 #remove{
@@ -291,3 +292,17 @@ margin-top: 15px;
 	display: none;
 }
 .hidden-pc-icon{ display: none; }
+
+button.INCREASE-btn {
+    color: white;
+    background: orange;
+    border: none;
+}
+
+button.subtract-btn {
+    border: none;
+    color: white;
+    background: orange;
+}
+
+
