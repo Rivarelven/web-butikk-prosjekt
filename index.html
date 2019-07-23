@@ -10,11 +10,12 @@
 	<!--<link rel="stylesheet"  href="mobileStyle.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="google-site-verification" content="CyxrugJO_8TNJr_WvFGj6ERz7SUCpGNhrPlLZ5178LI" />
   <!-- ikke min fil-->
        <script
     src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
 		</script>
-<link rel="stylesheet"type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">   
+<link rel="stylesheet"type="text/css"href="ionicons/ionicons-2.0.1/css/ionicons.css">   
 <link rel="Icon"type="image/png"href="favicon.png">
   <!-- normalize.css er fil fra nett-->
 <link rel="stylesheet"type="text/css"href="normalize.css">
@@ -44,11 +45,11 @@
 		<i class="ion-navicon-round big-icon hidden-pc-icon navigation-icon" onclick="showMobileMenu()"></i>
         <div id="navigation-div">
            <li class="header-li"><i class="ion-ios-cart big-icon white-icon" onclick="showShopingCart()"></i></li>
-			<li class="header-li"><a href="https://a-h-arabic-store.netlify.com"><img src="iraq.png" id="iraq"></a>
+			<li class="header-li"><a href="A&H%20%E2%80%93%20Arabic.html"><img src="iraq.png" id="iraq"></a>
 			</li>
-			<li class="header-li"><a href="https://a-h-spanish.netlify.com"><img src="chile.png"id="chile"></a></li>
+			<li class="header-li"><a href="A&H%E2%80%93spanish.html"><img src="chile.png"id="chile"></a></li>
             <li class="header-li" id="contact-us"onclick="contactUS()">contact us</li>
-			 <li class="header-li" id="contact-us-mobile"onclick="contactUS_Mobile()">contact us</li>
+			 <li class="header-li" id="contact-us-mobile"onclick="contactUS_Mobile()">Contactanos</li>
         <li class="header-li" id="order-now" onclick="orderNow()">order now</li>
      
         </div>
@@ -58,8 +59,8 @@
         
         <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">Shoping Cart</h2>
 		<div id="list-of-items"></div>
-		<h4 id="total">total:</h4>
-<span id="total_sum"></span>
+		
+         <h4 id="total-amount"></h4>
 			<button id="remove"onclick="deletea()">Empty Cart</button>
          <div id="paypal-button-container"></div> 
     </div>
@@ -156,15 +157,17 @@
     </script>
 	
 	
-    <script>
+     <script>
     //egen kode
 //egen kode
 	
   var inCart=[];
   const cart=document.querySelector('.cart');	
+
   const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
 		
   AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
+
 	const product_allContent=AddToCartbtn.parentNode;
 	const product={
 		image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
@@ -176,61 +179,94 @@ name:product_allContent.querySelector('.alle_navn').innerText,
 	
     var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
     if(productsincart===false){
+	
+	
 		var list_of_items=document.getElementById("list-of-items");
 	    list_of_items.insertAdjacentHTML(
 			'beforeend',`<div class="cart_item" id="cart_item">
 		   <img class="bestill-bilder"src="${product.image}"alt="${product.name}" > 
-		   <h3 class="alle_navn">${product.name}
+<h3 class="alle_navn">${product.name}</h3>
 		   <p class="alle_navn">${product.price_text}</p>
 		   <span class="price">${product.price}</span>
-		   <input type="Number"class="amount"min="1"value="${product.amount}"></input>
+<button class="INCREASE-btn"data-action="INCREASE_ITEM">&plus;</button>
+		   <span class="amount">${product.amount}</span>
+<button class="subtract-btn"data-action="DECREASE_ITEM">&minus;</button>
 		   </div>`
 	   );
 
-	var input=document.querySelector('.amount').value
-	var totala=Number(input)*product.price;
-	console.log(totala)
-	var totaltext=document.getElementById("total_sum")
-	totaltext.innerHTML=totala;
-	console.table(totala);
+	
+
 		inCart.push(product);
-
-	  console.table(inCart)
+console.log(product.price)
 	 
-				 const selectedElement =document.querySelector('.amount') ;
-
-	selectedElement.addEventListener('change', (event) => {
-		var a=document.querySelectorAll('.price');
 		
-		var b=Number(document.querySelector('.amount').value);
+	var ThecartItems=cart.querySelectorAll('.cart_item');	
 	
-		var result =document.getElementById("total_sum").innerHTML;
+	ThecartItems.forEach(ThecartItem =>{
+	if(ThecartItem.querySelector('.alle_navn').innerText ===product.name){
+		ThecartItem.querySelector('[data-action="INCREASE_ITEM"]').addEventListener('click',()=>{
+		console.log(ThecartItem);
+		inCart.forEach(itemcart =>{
+			if(itemcart.name===product.name){
+				itemcart.amount++; 
+				ThecartItem.querySelector('.amount').innerText=itemcart.amount;
+				if(itemcart!==0){
+					
+		countCartTotal();
+				}
+			}
+		})
+	})
 		
-	
-		var sum=0;
-		sum=Number(inCart[0].price)*b;
-		for(var i=1;i<a.length;i++)
-		{
-			if(1+1===2){
-				var sas=product.amount=b
-	inCart[i].value===b
-	}
-			var nysum=sum+=Number(inCart[i].price)*b;
-			result=document.getElementById("total_sum").innerHTML=nysum;
-		
-
-console.log(sum);
-
-	}
-		
-		})	
+			ThecartItem.querySelector('[data-action="DECREASE_ITEM"]').addEventListener('click',()=>{
+		console.log(ThecartItem);
+		inCart.forEach(itemcart =>{
+			
+			if(itemcart.name===product.name){
+				if(itemcart.amount>1){
+					itemcart.amount--; 
+				ThecartItem.querySelector('.amount').innerText=itemcart.amount;
+				if(itemcart!==0){
+					
+		countCartTotal();
+				}
+				}
+				else{
+				ThecartItem.remove();
+				inCart=inCart.filter(itemcart=>itemcart.name!==product.name);
+				var zeronumdisplay=document.getElementById("total-amount");
+				cart_sum=cart_sum;
+				zeronumdisplay.innerHTML=cart_sum;
 				
+				
+				}
+			}
+		});
+	});
+		
+		
+		
+	}
+	
+	});
+
+			
 };
 
-})
-  })
+});
+  });
 									  
 
+function countCartTotal(){
+let cart_sum=0;
+var totalrender=document.getElementById("total-amount");
+	inCart.forEach(cartitem=>{
+		cart_sum=cart_sum+(cartitem.amount*cartitem.price);
+		
+	})
+	console.log(cart_sum);
+	totalrender.innerHTML="total: "+cart_sum;
+}
 
 
 
@@ -241,7 +277,11 @@ function deletea(){
 var list=document.getElementById("list-of-items")
 list.innerHTML="<div></div>"
 inCart=[];
-var sum=document.getElementById("total_sum").innerHTML=0;
+let cart_sum=0;
+var totalrender=document.getElementById("total-amount");
+	
+	totalrender.innerHTML=" ";
+
 }
 
 
@@ -251,14 +291,14 @@ var sum=document.getElementById("total_sum").innerHTML=0;
       <script>
         // ikke min kode
        
-       
+       //var cart_sum=Number(document.getElementById("total-amount"))
       paypal.Buttons({
     createOrder: function(data, actions) {
       return actions.order.create({
         purchase_units: [{
         name:"The Total",
           amount: {
-           //value: '0.01'
+           //value: cart_sum
             
           }
         }]
@@ -288,7 +328,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
             <div class="row section-3-titel"><h2 id="section-3-header">Reviews from our Costumers</h2></div>
             <div class="row all-reviwes">
             <div class="col span-1-of-3">
-                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H<br><cite><img src="person1.jpg"class="section-3-person-photo" >Bill Williams</cite>
+                <blockquote>Thank you for making it painless, pleasant and most of all hassle free! If you aren't sure, always go for A&H <br><cite><img src="person1.jpg"class="section-3-person-photo" >Bill Williams</cite>
 </blockquote>
                 </div>
                 <div class="col span-1-of-3">
@@ -302,6 +342,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
             </div>
         </section>
         <section class="js--section-about-us"><div class="row"><h2 id="section-4-header">About-Us</h2>
+            <p id="long-text">
             <p id="long-text">Hello  were A&H, your new premium food delivery service. We know you are always busy. No time for cooking.<br> So let us take care of that. we are really good at it we promise!</p>
             </div>
 		
@@ -311,7 +352,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
         <i class="ion-ios-time-outline big-icon"></i>
         <h3 class="section-4-h3element">24 Hours a day</h3>
             <p class="section-4-Pelement">
-        we work all the time so we can serve you! order now and the food will be at your house in about 5 minutes    
+       we work all the time so we can serve you! order now and the food will be at your house in about 5 minutes 
             </p>    
             
             </div> 
@@ -321,7 +362,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
         <i class="ion-earth big-icon"></i>
         <h3 class="section-4-h3element">From the river to the sea</h3>
             <p class="section-4-Pelement">
-       we look for food every where and we search for food from the river to the sea just to make food for you!
+        we look for food every where and we search for food from the river to the sea just to make food for you!
             </p>    
             </div>    
             
@@ -329,7 +370,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
         <i class="ion-android-happy big-icon"></i>
         <h3 class="section-4-h3element">100% Happy</h3>
             <p class="section-4-Pelement">
-        if you want to enjoy your time with your family or you friends, we are alway ready to help you so you can enjoy your dinner
+       if you want to enjoy your time with your family or you friends, we are alway ready to help you so you can enjoy your dinner
             </p>    
             </div>    
             
@@ -350,7 +391,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
      <div class="mc-field-group">
-	<label for="mce-FNAME">First Name </label>
+	<label for="mce-FNAME">First Name  </label>
 	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
 </div>
     <div class="mc-field-group">
@@ -383,7 +424,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
 	
          
     <div>
-        <h4 id="fotter-header">A&H all Rights Served</h4>
+        <h4 id="fotter-header">&copy; 2019 A&H all Rights Served</h4>
     </div>
        	 <div id="footer-text">
         <li class = 'footerCon' id = 'footerCon' onclick = 'contactUs2()'>Top</li>
@@ -412,7 +453,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
 		 window.scrollBy (0, 3400);
 		}
 	var typed2 = new Typed('#first-H2', {
-    strings: ["<h4>Buy now</h4>","<h4>Order Now</h4>"],
+    strings: ["<h4>Buy Now</h4>","<h4>Order Now</h4>"],
     typeSpeed: 100,
     backSpeed: 0,
     fadeOut: true,
