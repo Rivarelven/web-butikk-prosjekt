@@ -4,9 +4,9 @@
     <title>A&H</title>
     <!-- style.css er min css fil-->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" media="screen and (min-width: 800px)" href="style.css">
+		<link rel="stylesheet" media="screen and (min-width: 800px)" href="style-arabic.css">
 
-	<link rel="stylesheet" media="screen and (max-width: 800px)" href="mobileStyle.css">
+	<link rel="stylesheet" media="screen and (max-width: 800px)" href="mobileStyle-arabic.css">
 	<!--<link rel="stylesheet"  href="mobileStyle.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +14,7 @@
        <script
     src="https://www.paypal.com/sdk/js?client-id=AfWLdHU5OVPDZc-Zy9zgSaAxZ5ZyoSvsc4MAk0wJqzkeT8jcHkyyL75cdQ2W6W9DNzjrABIYcG0OSH3n">
 		</script>
-<link rel="stylesheet"type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">   
+<link rel="stylesheet"type="text/css"href="ionicons/ionicons-2.0.1/css/ionicons.css">   
 <link rel="Icon"type="image/png"href="favicon.png">
   <!-- normalize.css er fil fra nett-->
 <link rel="stylesheet"type="text/css"href="normalize.css">
@@ -32,18 +32,27 @@
 <link rel="mask-icon" href="favicon.png" color="#000000">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet"type="text/css"href="font%20for%20arabic%20website.css">
-<style>
-	*{
-		font-family:  'Amiri',serif;
-	}		
-	#twentifour{
-	margin-left: 85px;	
-	margin-top: -20px;
-	
-	}
+<link rel="stylesheet"href="font%20for%20arabic%20website.css"type="text/css">
+		
 
-</style>
+<style>*{
+        font-family: 'Amiri', serif;
+         }
+	
+button.INCREASE-btn {
+    color: white;
+    background: orange;
+    border: none;
+}
+
+button.subtract-btn {
+    border: none;
+    color: white;
+    background: orange;
+}
+
+	
+		</style>
 </head>
     <body>
 
@@ -55,56 +64,59 @@
 		<i class="ion-navicon-round big-icon hidden-pc-icon navigation-icon" onclick="showMobileMenu()"></i>
         <div id="navigation-div">
            <li class="header-li"><i class="ion-ios-cart big-icon white-icon" onclick="showShopingCart()"></i></li>
-			<li class="header-li"><a href="https://it2.hvgs.it/prosjekt/A&H/"><img src="britain.png" id="England"alt="England"></a>
+			<li class="header-li"><a href="A&H%20%E2%80%93english.html"><img src="britain.png" id="britain"></a>
 			</li>
-			<li class="header-li"><a href="https://a-h-spanish.netlify.com"><img src="chile.png"id="chile"></a></li>
-			<li class="header-li" id="contact-us"onclick="contactUS()">طواصل معنه</li>
-            <li class="header-li" id="order-now" onclick="orderNow()">اىشتري اللان</li>
+			<li class="header-li"><a href="A&H%E2%80%93spanish.html"><img src="chile.png"id="chile"></a></li>
+           <li class="header-li" id="contact-us"onclick="contactUS()">طواصل معنه</li>
+			 <li class="header-li" id="contact-us-mobile"onclick="contactUS_Mobile()">contact us</li>
+         <li class="header-li" id="order-now" onclick="orderNow()">اىشتري اللان</li>
      
         </div>
             </ul>
         </nav>
         
         
-        <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">سلت التسوق</h2>
+      <div id="shopCart-container" class="cart"><h2 id="shopping-Cart-header">سلت التسوق</h2>
 		<div id="list-of-items"></div>
-		<h4 id="total">المجموع:</h4>
-<span id="total_sum"></span>
-<button id="remove"onclick="deletea()">سله فاغه</button>
-         <div id="paypal-button-container"></div> 
+		<h4 class="total"></h4>
+		<button id="remove"onclick="deletea()">سله فاغه</button>
+           <div id="paypal-button-container"></div>
     </div>
     </header>
 		
 <section>
-        <h2 id="first-H2">احجز اللأن</h2>
+<h2 id="first-H2">احجز اللأن</h2>
 	
      <ul class="bestillings-ul">
+		 <!--ITEM:-->
 <li class="Bestillings-li">
 <div class="bestillings-diver">
 <img src="torsk.jpg"class="bestill-bilder alle_bilder" id="torsk">
 <h3 class="alle_navn">  سمك التورسك</h3>
-<div>  <p class="alle_priser">السعر:</p><span class="number" type="number">270</span></div>
-<button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
+<div>  <p class="alle_priser">السعر:</p><span class="number" type="number">270</span></div><button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
 <br>
 </div>
 </li>
+		<!--ITEM:--> 
 <li class="Bestillings-li">
     <div class="bestillings-diver">
     <img src="laks.jpg"class="bestill-bilder alle_bilder"id="laks">
-    <h3 class="alle_navn">سمك اللاكس</h3>
-    <div>  <p class="alle_priser">السعر:</p><span class="number"type="number">323</span></div>
-    <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
+     <h3 class="alle_navn">سمك اللاكس</h3>
+		<div>  <p class="alle_priser">السعر:</p><span class="number"type="number">323</span></div>
+   <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
     <br>
     </div>
     </li>
+		
+		<!--ITEM:--> 
 <li class="Bestillings-li">
         <div class="bestillings-diver">
         <img src="krabbesuppe.jpg"id="krabbesuppe"class="alle_bilder">
 			
         <h3 class="alle_navn">حساء السمك</h3>
-        <div><p class="alle_priser">السعر:</p><span class="number" type="number">290</span></div>
-            
-            <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
+	<div><p class="alle_priser">السعر:</p><span class="number" type="number">290</span></div>
+        
+       <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
         <br>
         </div>
         </li>
@@ -113,7 +125,8 @@
 <li class="Bestillings-li">
 <div class="bestillings-diver">
 <img src="cazuela.jpg"class="bestill-bilder alle_bilder" id="Cazuela">
-<h3 class="alle_navn">حساء الخدراوات</h3>
+        <h3 class="alle_navn">حساء السمك</h3>
+
 <div>  <p class="alle_priser">السعر:</p><span class="number"type="number">320</span></div>
 
 <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
@@ -126,17 +139,17 @@
     <h3 class="alle_navn">الكنافه</h3>
     
 	<div>  <p class="alle_priser">السعر:</p><span class="number"type="number">323</span></div>
-    <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
+   <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
     <br>
     </div>
     </li>
 <li class="Bestillings-li">
         <div class="bestillings-diver">
         <img src="masgouf.jpg"id="krabbesuppe"class="alle_bilder">
-        <h3 class="alle_navn">سمك المزكوف</h3>
-        <div>  <p class="alle_priser">السعر:</p><span class="number"type="number">120</span></div>
-  
-    <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
+       <h3 class="alle_navn">سمك المزكوف</h3>
+			<div>  <p class="alle_priser">السعر:</p><span class="number"type="number">120</span></div>
+      
+       <button class="buy-button"data-action="Add-to-Cart">ىشتري اللان</button>
         <br>
         </div>
         </li>
@@ -145,6 +158,8 @@
 	
      <script>
     //egen kode
+		//THIS IS FOR OPENING AND CLOSING THE SHOPPING CART
+		 
       function showShopingCart() {
         var x = document.getElementById("shopCart-container");
         if (x.style.display === "none") {
@@ -152,6 +167,7 @@
         } else {
           x.style.display = "none";
         }
+		 
 	
       }
 		  function showMobileMenu() {
@@ -172,74 +188,112 @@
 	
   var inCart=[];
   const cart=document.querySelector('.cart');	
+
   const AddToCartbtns=document.querySelectorAll('[data-action="Add-to-Cart" ]');
 		
   AddToCartbtns.forEach(AddToCartbtn=>{AddToCartbtn.addEventListener('click',()=>{
+
 	const product_allContent=AddToCartbtn.parentNode;
 	const product={
 		image:product_allContent.querySelector('.alle_bilder').getAttribute('src'),
-		name:product_allContent.querySelector('.alle_navn').innerText,
+name:product_allContent.querySelector('.alle_navn').innerText,
 		amount:1,
 		price:Number(product_allContent.querySelector('.number').innerText),
-		price_text:"السعر: "
+		price_text:"price: "
 	}
 	
     var productsincart=(inCart.filter(cartitem =>(cartitem.name===product.name)).length>0)
     if(productsincart===false){
+	
+	
 		var list_of_items=document.getElementById("list-of-items");
 	    list_of_items.insertAdjacentHTML(
 			'beforeend',`<div class="cart_item" id="cart_item">
 		   <img class="bestill-bilder"src="${product.image}"alt="${product.name}" > 
-		   <h3 class="alle_navn">${product.name}
+<h3 class="alle_navn">${product.name}</h3>
 		   <p class="alle_navn">${product.price_text}</p>
 		   <span class="price">${product.price}</span>
-		   <input type="Number"class="amount"min="1"value="${product.amount}"></input>
+<button class="INCREASE-btn"data-action="INCREASE_ITEM">&plus;</button>
+		   <span class="amount">${product.amount}</span>
+<button class="subtract-btn"data-action="DECREASE_ITEM">&minus;</button>
 		   </div>`
 	   );
 
-	var input=document.querySelector('.amount').value
-	var totala=Number(input)*product.price;
-	console.log(totala)
-	var totaltext=document.getElementById("total_sum")
-	totaltext.innerHTML=totala;
-	console.table(totala);
+	
+
 		inCart.push(product);
 
-	  console.table(inCart)
+	  
 	 
-				 const selectedElement =document.querySelector('.amount') ;
-
-	selectedElement.addEventListener('change', (event) => {
-		var a=document.querySelectorAll('.price');
-		
-		var b=Number(document.querySelector('.amount').value);
+	var ThecartItems=cart.querySelectorAll('.cart_item');	
 	
-		var result =document.getElementById("total_sum").innerHTML;
+	ThecartItems.forEach(ThecartItem =>{
+	if(ThecartItem.querySelector('.alle_navn').innerText ===product.name){
+		ThecartItem.querySelector('[data-action="INCREASE_ITEM"]').addEventListener('click',()=>{
+		console.log(ThecartItem);
+		inCart.forEach(itemcart =>{
+			if(itemcart.name===product.name){
+				itemcart.amount++; 
+				ThecartItem.querySelector('.amount').innerText=itemcart.amount;
+				if(itemcart!==0){
+					
+		countCartTotal();
+				}
+			}
+		})
+	})
 		
+			ThecartItem.querySelector('[data-action="DECREASE_ITEM"]').addEventListener('click',()=>{
+		console.log(ThecartItem);
+		inCart.forEach(itemcart =>{
+			
+			if(itemcart.name===product.name){
+				if(itemcart.amount>1){
+					itemcart.amount--; 
+				ThecartItem.querySelector('.amount').innerText=itemcart.amount;
+				if(itemcart!==0){
+					
+		countCartTotal();
+				}
+				}
+				else{
+				ThecartItem.remove();
+				inCart=inCart.filter(itemcart=>itemcart.name!==product.name);
+				let cart_sum=0;
+var totalrender=document.querySelector('.total');
 	
-		var sum=0;
-		sum=Number(inCart[0].price)*b;
-		for(var i=1;i<a.length;i++)
-		{
-			if(1+1===2){
-				var sas=product.amount=b
-	inCart[i].value===b
-	}
-			var nysum=sum+=Number(inCart[i].price)*b;
-			result=document.getElementById("total_sum").innerHTML=nysum;
-		
+	totalrender.innerHTML="total: "+cart_sum;
 
-console.log(sum);
-
-	}
-		
-		})	
 				
+				}
+			}
+		});
+	});
+		
+		
+		
+	}
+	
+	});
+
+			
 };
 
-})
-  })
+});
+  });
 									  
+
+function countCartTotal(){
+let cart_sum=0;
+	inCart.forEach(cartitem=>{
+		cart_sum=cart_sum+(cartitem.amount*cartitem.price);
+		
+	})
+	
+var totalrender=document.querySelector('.total');
+	console.log(cart_sum);
+totalrender.innerHTML="total: "+cart_sum;
+}
 
 
 
@@ -251,34 +305,22 @@ function deletea(){
 var list=document.getElementById("list-of-items")
 list.innerHTML="<div></div>"
 inCart=[];
-var sum=document.getElementById("total_sum").innerHTML=0;
+let cart_sum=0;
+var totalrender=document.querySelector('.total');
+	
+	totalrender.innerHTML="total: "+cart_sum;
+
 }
 
 
     </script>
 	
 	
-      <script>
-        // ikke min kode
-       
-       
-      paypal.Buttons({
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-        name:"The Total",
-          amount: {
-           //value: '0.01'
-            
-          }
-        }]
-      });
-    },
-    onApprove: function() {
-      
-    }
-  }).render('#paypal-button-container');
-     </script>
+    	
+		
+	
+		
+	
 	
     <style>
     .cart-item{
@@ -291,74 +333,72 @@ var sum=document.getElementById("total_sum").innerHTML=0;
         border:2px dashed var(--color-gray-light);
         animation: .3s add-cart-item;
     }
-    
+		.section-4-number{
+		margin-left: 36px;
+		}
     </style>
         </section>
         <section class="section-testimonials">
-                <div class="row section-3-titel"><h2 id="section-3-header">طعليقات الزبائن</h2></div>
-                <div class="row all-reviwes">
+           <div class="row section-3-titel"><h2 id="section-3-header">طعليقات الزباءن</h2></div>
+            <div class="row all-reviwes">
+				
+            <div class="col span-1-of-3">
+                <blockquote> شكرا لكوم لجعله اسهل ومجانيه! ادا لم تكن متعكدا يجب عليك دومان  ان تختر اوح <br><cite><img src="person1.jpg"class="section-3-person-photo" >Bill Williams</cite></blockquote>
+                </div>
+				
                 <div class="col span-1-of-3">
-                    <!-- بيل ويليامس-->
-    
-                    <blockquote> شكرا لكوم لجعله اسهل ومجانيه! ادا لم تكن متعكدا يجب عليك دومان  ان تختر اوح <br><cite><img src="person1.jpg"class="section-3-person-photo" > بيل ويليامس</cite>
-    </blockquote>
-                    </div>
-                    <div class="col span-1-of-3">
-                    <!--انا استخدم ا و خ منذو 5 سنوات-->
-                    <blockquote> لا يمكنوني ان استوعب كيف كونت اعيش بلا ا و ح! انا سوفا وخبر كول من اعرف! انا استخدم ا و ح منذو ٥ سنوات 
-    <!-- هارولد ريفارسون-->
-    <br><cite><img src="person3.jpg"class="section-3-person-photo"> هارولد ريفارسون</cite>
-    </blockquote>
-                    </div>
-					<!-- تيرون جونسن-->
-                    <div class="col span-1-of-3">
-                    <!--هذا الموقع هو واحد من المواقع الموفضله لي-->
-                    <blockquote>هذا الموقع هو واحد من المواقع الموفضله لي!النادله عملت بشكل جيد و الطعام كان جيدن! سععود الى المزيد من الطعام<br><cite><img src="person2.jpg"class="section-3-person-photo"> تيرون جونسن</cite>
-    </blockquote>
-                    </div>
+                				
+                <blockquote>
+				لا يمكنوني ان استوعب كيف كونت اعيش بلا ا و ح! انا سوفا وخبر كول من اعرف! انا استخدم ا و ح منذو ٥ سنوات 
+                <br>
+				<cite><img src="person3.jpg"class="section-3-person-photo">Harold rivarson</cite>
+                </blockquote>
                 </div>
-            </section>
-            <section class="js--section-about-us"><div class="row"><h2 id="section-4-header">معلومات عنا</h2>
-                <!--مرحبا نحن ا و ح شركت الطوسيلات الجديده نحن نعلم بءنك مشغول داءمن فنحن نقول لاك دع الطعام لانا لي اننا محترفين --->
-                <p id="long-text">مرحبا نحن ا و ح شركت الطوسيلات الجديده نحن نعلم بءنك مشغول داءمن فنحن نقول لاك دع الطعام لانا لي اننا محترفين</p>
-                </div>
-            
-            <div class="js-wp-1">
-            <div class="row">
-            <div class="col span-1-of-3 section-4-cols">
-            <i class="ion-ios-time-outline big-icon"></i>
-            <h3 class="section-4-h3element"> ساعه في اليوم<p id="twentifour">24</p>  </h3>
-                <p class="section-4-Pelement">
-                <!--نحن نشتغل طوال اليوم حتا نقدمم الطعام لك-->
-                نحن نشتغل طوال اليوم حتا نقدم الطعام لك!احجز اللان و سيسل الطعام لاك في بيتك بعد 5 دقاءق
-                </p>    
-                
-                </div> 
-               
-                
-                 <div class="col span-1-of-3 section-4-cols">
-            <i class="ion-earth big-icon"></i>
-			
-
-            <h3 class="section-4-h3element">من النهر الئ النهر</h3>
-                <p class="section-4-Pelement">
-				 نحن نبحث عن الطعام من النهر الئ البحر حتا نصنع الطعام لك
-         
-                </p>    
-                </div>    
-                
-                 <div class="col span-1-of-3 section-4-cols">
-            <i class="ion-android-happy big-icon"></i>
-            <h3 class="section-4-h3element">100% سعيد</h3>
-                <p class="section-4-Pelement">
-				اذا اترغب بل يستنتاع بواقتك مع ال عايله او الاصديقاء يسءلنا ليننا دايمن موستعدين ايخدمتك حتا تستمتع  بطامك
-           
-                </p>    
-                </div>    
-                
-                
+				
+                <div class="col span-1-of-3">
+                <blockquote>هذا الموقع هو واحد من المواقع الموفضله لي!النادله عملت بشكل جيد و الطعام كان جيدن! سععود الى المزيد من الطعام<br><cite><img src="person2.jpg"class="section-3-person-photo">Tyrone Johnson</cite>
+</blockquote>
                 </div>
             </div>
+        </section>
+        <section class="js--section-about-us"><div class="row"><h2 id="section-4-header">معلومات عنا</h2>
+             <p id="long-text">مرحبا نحن ا و ح شركت الطوسيلات الجديده نحن نعلم بءنك مشغول داءمن فنحن نقول لاك دع الطعام لانا لي اننا محترفين</p>
+            </div>
+		
+		<div class="js-wp-1">
+        <div class="row">
+        <div class="col span-1-of-3 section-4-cols">
+        <i class="ion-ios-time-outline big-icon"></i>
+        <div><h3 class="section-4-h3element">ساعه في اليوم<p class="twentyfour">24</p></h3></div>
+            <p class="section-4-Pelement">
+        نحن نشتغل طوال اليوم حتا نقدم الطعام لك!احجز اللان و سيسل الطعام لاك في بيتك بعد 5 دقاءق    
+            </p>    
+            
+            </div> 
+           
+            
+             <div class="col span-1-of-3 section-4-cols">
+        <i class="ion-earth big-icon"></i>
+        <h3 class="section-4-h3element">من النهر الئ النهر</h3>
+            <p class="section-4-Pelement">
+      نحن نبحث عن الطعام من النهر الئ البحر حتا نصنع الطعام لك
+            </p>    
+            </div>    
+            
+             <div class="col span-1-of-3 section-4-cols">
+        <i class="ion-android-happy big-icon"></i>
+        <h3 class="section-4-h3element">100% سعيد</h3>
+            <p class="section-4-Pelement">
+        اذا اترغب بل يستنتاع بواقتك مع ال عايله او الاصديقاء يسءلنا ليننا دايمن موستعدين ايخدمتك حتا تستمتع  بطامك
+            </p>    
+            </div>    
+            
+            
+            </div>
+        </div>
+        </section>
+    
+        
 <section class="section-form">
 <form action="https://gmail.us20.list-manage.com/subscribe/post?u=af0fa8cc31b7e47edefe372bc&amp;id=f7d13e65bc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>        
  <div id="mc_embed_signup_scroll" class="row">
@@ -380,8 +420,8 @@ var sum=document.getElementById("total_sum").innerHTML=0;
      <div class="mc-field-group size1of2">
 	<label for="mce-BIRTHDAY-month">تاريخ الميلاد </label>
 	<div class="datefield">
-		<span class="subfield monthfield">الشهر<input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="الشهر" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> / 
-		<span class="subfield dayfield">اليوم<input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="اليوم" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span> 
+		<span class="subfield monthfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> / 
+		<span class="subfield dayfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span> 
 		<span class="small-meta nowrap">
 		</span>
 	</div>
@@ -403,17 +443,17 @@ var sum=document.getElementById("total_sum").innerHTML=0;
 	
          
     <div>
-        <h4 id="fotter-header">ا و ح يتبع قوانيننا</h4>
+        <h4 id="fotter-header">ا &amp; ح&#45; كول القوانين موتبعه</h4>
     </div>
        	 <div id="footer-text">
-        <li class = 'footerCon' id = 'footerCon' onclick = 'contactUs2()'>الئ العلا</li>
-        <li class = 'footerCon' id = 'footerOrd' onclick = 'orderNow2()'>احجز اللان</li>     
+        <li class = 'footerCon' id = 'footerCon' onclick = 'contactUs2()'>الا العلا</li>
+        <li class = 'footerCon' id = 'footerOrd' onclick = 'orderNow2()'>احجز اللأن</li>     
     </div>
          
         
     <div class="side">
         <a href="https://www.facebook.com" target="_blank"><i class="ion-social-facebook"id="facebook-icon"></i></a> 
-        <a href="https://twitter.com/Ameer92266953" target="_blank"><i class="ion-social-twitter"id="twitter-icon"></i></a>
+        <a href="https://twitter.com/Ah83032988" target="_blank"><i class="ion-social-twitter"id="twitter-icon"></i></a>
 		  <a href="https://www.youtube.com" target="_blank"><i class="ion-social-youtube"id="youtube-icon" ></i></a>
     </div>
          
@@ -432,7 +472,7 @@ var sum=document.getElementById("total_sum").innerHTML=0;
 		 window.scrollBy (0, 3400);
 		}
 	var typed2 = new Typed('#first-H2', {
-    strings: ["<h4>اشتري اللأن</h4>","<h4>احجز اللأن</h4>"],
+     strings: ["<h4>اشتري اللأن</h4>","<h4>احجز اللأن</h4>"],
     typeSpeed: 100,
     backSpeed: 0,
     fadeOut: true,
