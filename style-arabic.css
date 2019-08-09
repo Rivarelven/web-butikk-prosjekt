@@ -1,0 +1,304 @@
+img.bestill-bilder{
+width: 120px;
+}
+bestillings-diver{
+    float:left;
+    margin-right: 120px;
+    margin-top: 40px;}
+.header-li{
+    
+float:right;
+    
+list-style: none;
+    
+color:#FF9800;
+    
+font-size: 129%;
+    
+display: inline-block;
+    
+padding-right: 40px;
+    
+margin-top:25px;
+    
+text-decoration: none;
+    
+}
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("laks.jpg");
+background-size: cover;
+height: 100vh;}
+#first-H2::after{
+content: "";
+width: 130px;
+height: 2px;
+background-color: orange;
+display: block;
+margin-left: 637px;
+margin: 0 auto;
+}
+#first-H2{
+    text-align: center;
+}
+#contact{margin-top: 16px;}
+label{margin-left: 5px;}
+.contact-lis{color: black;
+float:left;
+margin-left: 100px;
+font-size: 20px;}
+input{
+    margin-left: 20px;}
+*{margin: 0px;}
+p{
+    color: black;}
+.Bestillings-li{
+    float:left;
+    margin-top: 40px;
+    margin-left: 40px;
+    list-style: none;}
+.Bestillings-ul{
+margin-left: 300px;
+display: inline-block;}
+#krabbesuppe{
+width: 120px;
+height: 14%;}
+.li-notImage{
+margin-top: 6px;
+background: red;
+margin-left: 200px;
+width: 500px;
+margin-bottom: 6px;
+list-style: none;}
+.li-image{margin-top: 6px;list-style: none;
+margin-left: 200px;
+width: 60px;
+margin-bottom: 16px;}
+#ul-image{
+    width: 130px;
+    margin-left: 160px;}
+#shopping-cart-payNow{
+    background-color: black;}
+.big-icon{
+font-size: 36px;
+color:coral;
+margin-left: 100px;}
+#paypal-button-container{
+    width: 50px;
+margin-top: 190px;
+    margin-left: 60px;}
+#logo{
+width: 90px;transition:transform 2s;
+}
+#logo:hover{
+transform: rotate(360deg)}
+nav{
+background: whitesmoke;}
+#navigation-div{
+margin-top:-90px;
+margin-right: 450px
+}
+#shopping-Cart-header{
+margin-left: 80px;}
+#shopCart-container{
+border: 3px solid orange;
+    width: 300px;
+    max-height:300px;
+    background: wheat;
+    margin-left: 400px;
+    margin-top: 90px;
+overflow: auto}
+#cazuela{
+width: 120px;
+height:14%;
+}
+#masgouf{
+    width: 120px;
+}
+.section-3-titel{
+margin-top: 35px;
+    margin-left: 450px;
+    color: white;
+}
+.section-3-person-photo{
+border-radius: 50%;
+height: 45px;
+margin-right: 10px;
+vertical-align: middle;
+}
+cite{font-size: 90%;
+margin-top: 25px;
+display: block;}
+.section-testimonials{
+background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("torsk.jpg");
+background-attachment: fixed;
+    background-size: cover;
+    height: 50vh;
+    padding: 0;
+    
+}
+
+blockquote{color: white;
+padding: 2%;
+font-style: italic;
+line-height: 145%;
+position: relative;
+margin-top: 40px;}
+.all-reviwes{
+margin-top: 2px;
+}
+#section-3-header{
+    margin-top: 36px;
+}
+.amount{width: 30px;
+
+margin-top: -80px;}
+
+#remove{
+color: white;
+    background: red;
+    float: right;
+height: 25px;
+width: 120px;
+margin-top: 150px;
+margin-right: 60px;
+}
+#section-4-header{
+
+    font-size: 25px;
+    text-align: center;
+}
+#section-4-header::after{
+content: "";
+width: 130px;
+height: 2px;
+background-color: orange;
+display: block;
+margin-left:0px;
+    margin-top: 6px;
+margin: 0 auto;
+}
+.section-4-h3element{
+margin-top: 6px;
+margin-left: 60px;
+}
+.twentyfour{
+margin-left: 100px;
+margin-top: -20px;
+}
+.section-4-Pelement{
+margin-top: 6px;
+}
+#long-text{line-height: 145%;width: 35%;margin-left: 33%;margin-top: 8px;
+
+}
+#fotter-header{
+margin-left: 520px;    
+color: white;
+
+}
+footer{
+    
+    background-color:black
+}
+#footer-paragraph{
+    color: white;
+   
+}
+#newsletter-email{
+margin-top: -1px;
+font-size: 10px;
+margin-left: -310px;
+}
+newsletter-label{
+    color: white;
+}
+.section-4-cols{
+    margin-top: 18px;
+}
+
+#logo_fotter{
+    width: 80px;
+    margin-left: -310px;
+    margin-top: -15px;
+}
+
+.delte{margin-left: 150px;
+margin-top: -80px;
+}
+.section-form{
+    background-color: #f4f4f4;
+    height: 50vh;
+   
+}
+form{
+    margin-left: 480px;
+    display: grid;
+}
+#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;}
+
+
+#twitter-icon{
+	color: aqua;
+}
+#facebook-icon{
+	color: blue;
+}
+#youtube-icon{
+	color: red;
+
+}
+.buy-button {background-image: linear-gradient(rgba(255, 177, 0, 0.9),white);color: black;border-radius: 36px;margin-top: 15px;}
+#form-title{
+	margin-top: 50px;
+}
+.number{margin-top:-17;margin-left: 40px;display: inline-block;}
+.footerCon
+{
+    color: gray;
+    display: inline;
+    font-size: 20px;
+    margin: 10px;
+	;
+}
+#footer-text{
+	margin-left: 520px;
+	margin-top: 20px;
+}
+.side{
+	margin-left: 1000px;
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(rgba(255, 177, 0, 0.9),white); 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(rgba(255, 177, 0, 0.9),(255, 177, 0, 0.9)); 
+}
+
+#contact-us-mobile{
+	display: none;
+}
+.hidden-pc-icon{ display: none; }
+
+#mce-FNAME{
+margin-left: 9px;
+}
+#mce-LNAME{
+margin-left: 32px;
+}
+#form-title{
+margin-left: 137px;
+}

@@ -1,0 +1,165 @@
+#logo{
+   height:40px;
+   width:40px; 
+	margin-left: 110px;
+	transition:transform 2s;
+}
+#logo:hover{
+transform: rotate(360deg)}
+.header-li{
+	background: orange;
+  color:white;
+padding-left: 120px;
+margin: 0px;
+list-style:none;
+}
+nav{
+background:whitesmoke
+}
+.alle_bilder{
+width:125px;
+}
+#remove{
+background:red;
+color:white
+}
+#shopCart-container{
+	border:2px solid #ffb987;
+	background:beige;
+	margin-top:-20px;
+    max-height:200px;
+    overflow: auto;
+}
+#mc-embedded-subscribe-form{
+	margin-top: 10px;
+}
+.col:first-child{
+	margin-left: 0;
+	margin-top: 80px;
+}
+.span-1-of-3{width:100%;
+margin-top: 50px;}
+ul{
+	list-style:none;
+}
+blockquote{
+font-size:small
+}
+.section-3-person-photo{
+border-radius:50px
+}
+header{
+	    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("laks.jpg");
+  background-size: cover;
+height: 100vh
+
+}
+.bestill-bilder{
+	width:125px;
+}
+li{
+	list-style: none;
+}
+.section-testimonials{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("torsk.jpg");
+background-size: cover;
+height: 100vh;
+
+}
+img.bestill-bilder{width: 120px;}
+.section-3-person-photo{
+width: 50px;
+margin-top: 10px;
+}
+blockquote{
+color: white;
+
+}
+#section-3-header{
+color: white;
+}
+#first-H2{
+margin-left: 36px;
+}
+#first-H2::after{
+content: "";
+width: 130px;
+height: 2px;
+background-color: orange;
+display: block;
+margin-top: -25px;
+}
+.section-form{
+background-color: gainsboro;
+}
+.buy-button{
+	background-image: linear-gradient(rgba(255, 177, 0, 0.9),white);color: black;border-radius: 36px;
+margin-top: 15px;
+}
+.big-icon{
+	color: orange;
+	font-size: 36px;
+}
+.number{
+	margin-left: 45px;
+	margin-top: -35px;
+	display: inline-block;
+	
+}
+.white-icon{
+	color: white;
+}
+.main-nav{
+margin-left: -100px;
+text-align: center;
+}
+
+#fotter-header{
+	margin-top: 0px;
+}
+footer{
+	margin-top: -17px;
+	background: black;
+	color:white;
+}
+.hidden-pc-icon{
+	font-size: 25px;
+	margin-left: 320px;
+}
+#youtube-icon{
+color: red;
+}
+#twitter-icon{
+color: aqua;
+}
+#facebook-icon{
+	color: blue;
+}
+#mce-EMAIL{
+	margin-left: 36px;
+}
+#section-4-header::after{
+content: "";
+width: 130px;
+height: 2px;
+background-color: orange;
+display: block;
+
+}
+input#mce-EMAIL {
+    width: 250px;
+}
+
+input#mce-FNAME {
+    width: 250;
+    margin-left: 45px;
+}
+
+input#mce-LNAME {
+    width: 250px;
+    margin-left: 65px;
+}
+
+.mc-field-group.size1of2 {
+    margin-left: 146px;
+}
